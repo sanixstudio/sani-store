@@ -1,11 +1,17 @@
+import { Route, Switch } from 'react-router';
 import './App.css';
-import { Home, Cart } from './pages'
+import Header from './components/header/Header';
+import { Home, Cart, WishList } from './pages'
 
 function App() {
   return (
     <div className="App">
-      <Home />
-      <Cart />
+      <Header />
+      <Switch>
+        <Route exact path="/"><Home /></Route>
+        <Route path="/cart"><Cart /></Route>
+        <Route path="/wishlist"><WishList /></Route>
+      </Switch>
     </div>
   );
 }
