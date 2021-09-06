@@ -16,6 +16,7 @@ export const CardDetails = styled.div`
   box-shadow: 0 0.813em 2.5em rgba(0 0 0 / .1);
   border-radius: .625em;
   width: 100%;
+  height: 100%;
   padding: 1em;
   display: flex;
   flex-direction: column;
@@ -28,11 +29,12 @@ export const CardDetails = styled.div`
 export const CardHeader = styled.div`
   width: 100%;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 `
 
 export const HeaderIcon = styled(RiHeartLine)`
-  font-size: 1.5em;
+  font-size: 2em;
   color: ${colors.customRed}
 `
 
@@ -43,14 +45,17 @@ export const CardPrice = styled.span`
 export const CardImg = styled.img`
   max-width: 100%;
   width: 180px;
+  max-height: 200px;
+  object-fit: contain;
 `
 
 export const CardInfo = styled.div`
-  text-overflow: ellipsis;
-  width: 100%; 
-  white-space: nowrap;
-  overflow:hidden;
-  text-align: center;
+  padding: 0 1em;
+  margin-bottom: 1em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
 `
 
 export const CardButtons = styled.div`
@@ -63,7 +68,11 @@ export const CardButton = styled.button`
   background: ${colors.primaryBgColor};
   color: ${colors.secondaryTextColor};
   transition: background ease .2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   border: none;
+  gap: .5em;
   padding: .5em 1em;
   cursor: pointer;
   &:hover {
@@ -76,8 +85,9 @@ export const CardButton = styled.button`
 `
 
 export const HeartIcon = styled(RiHeartLine)`
-  margin-right: .5em;
+  font-size: 1.5em;
 `
 
 export const CartIcon = styled(RiShoppingCartLine)`
-  margin-right: .5em;`
+font-size: 1.5em;
+`

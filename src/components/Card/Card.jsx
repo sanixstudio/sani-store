@@ -17,17 +17,16 @@ import {
 import { sampleCard } from '../../assets/samples/sampleCard'
 console.log(sampleCard)
 
-const Card = () => {
+const Card = ({product}) => {
   return (
-    
     <Container>
       <CardDetails>
         <CardHeader>
           <HeaderIcon />
-          <CardPrice>$ {sampleCard.price}</CardPrice>
+          <CardPrice>$ {product.price}</CardPrice>
         </CardHeader>
-        {<CardImg src={sampleCard.image}></CardImg>}
-        <CardInfo>{sampleCard.description}</CardInfo>
+        {<CardImg src={product.image}></CardImg>}
+        <CardInfo>{product.description}</CardInfo>
       </CardDetails>
       <CardButtons>
         <CardButton><HeartIcon/>Add to List</CardButton>

@@ -1,10 +1,15 @@
 import React from 'react'
+import Card from '../components/Card/Card'
+import CardsContainer from '../components/CardsContainer/CardsContainer'
+
+// testing data
+import { SampleCards } from '../assets/samples/allCard'
 
 const Home = () => {
   return (
-    <div>
-      <h1>Home</h1>
-    </div>
+    <CardsContainer>
+      {SampleCards.map(card => <Card key={card.id} product={card} />)}
+    </CardsContainer>
   )
 }
 
