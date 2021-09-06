@@ -5,6 +5,7 @@ import { RiShoppingCartLine, RiHeartLine } from 'react-icons/ri';
 export const Container = styled.div`
   width: 100%;
   max-width: 250px;
+  margin: 0 1em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

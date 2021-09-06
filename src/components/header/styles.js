@@ -18,10 +18,13 @@ export const Inner = styled.div`
   padding: 1em 0;
 `
 export const LogoText = styled(Link)`
-  font-size: 2.25rem;
+  font-size: 1.75rem;
   font-weight: bold;
   text-decoration: none;
   color: ${colors.secondaryTextColor};
+  @media (min-width: 460px) {
+    font-size: 2.25rem;
+  }
 `
 
 export const LinkWrapper = styled.div`
