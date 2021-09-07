@@ -5,5 +5,6 @@ export const colors = {
   secondaryTextColor: "#ffffff",
   buttonHoverColor: "#128267",
   customRed: "#F40000",
+  lightGrey: "#eee",
   hrColor: "#DEDEDE"
 }

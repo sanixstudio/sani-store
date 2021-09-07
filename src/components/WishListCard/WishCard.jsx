@@ -9,11 +9,10 @@ import {
   CardInfo, 
   CardButtons, 
   CardButton, 
-  HeartIcon,
   CartIcon
 } from './styles'
 
-const Card = ({product}) => {
+const WishCard = ({product}) => {
   return (
     <Container>
       <CardDetails>
@@ -25,11 +24,10 @@ const Card = ({product}) => {
         <CardInfo>{product.description}</CardInfo>
       </CardDetails>
       <CardButtons>
-        <CardButton><HeartIcon/>Add to List</CardButton>
         <CardButton><CartIcon/>Add to Cart</CardButton>
       </CardButtons>
     </Container>
   )
 }
 
-export default Card
+export default WishCard

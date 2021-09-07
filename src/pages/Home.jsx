@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card, Tag, CardsContainer} from '../components'
+import { Card, Tag, CardsContainer } from '../components'
 
 // testing data
 import { SampleCards } from '../assets/samples/allCard'
@@ -7,7 +7,7 @@ import { SampleCards } from '../assets/samples/allCard'
 const Home = () => {
   return (
     <>
-    <Tag/>
+      <Tag />
       <CardsContainer>
         {SampleCards.map(card => <Card key={card.id} product={card} />)}
       </CardsContainer>

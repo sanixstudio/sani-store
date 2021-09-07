@@ -1,10 +1,14 @@
 import React from 'react'
+import {CardsContainer, WishCard} from '../components'
+
+// testing data
+import { SampleCards } from '../assets/samples/allCard'
 
 const WishList = () => {
   return (
-    <div>
-      <h1>WishList</h1>
-    </div>
+    <CardsContainer>
+      {SampleCards.slice(0, 6).map(card => <WishCard key={card.id} product={card}></WishCard>)}
+    </CardsContainer>
   )
 }
 
