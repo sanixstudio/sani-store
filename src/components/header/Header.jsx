@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 import { Container, Inner, LinkWrapper, NavLink, LogoText, HeartIcon, CartIcon, PillNumber } from './styles'
 
+import { Context } from '../../context/Context'
+
 const Header = () => {
-  const wishNumber = 4
-  const inCart = 12
 
   return (
     <Container>
@@ -11,10 +11,10 @@ const Header = () => {
         <LogoText to="/">Sani Store</LogoText>
         <LinkWrapper>
           <NavLink to="wishlist"><HeartIcon />
-            <PillNumber>{wishNumber}</PillNumber>
+            <PillNumber>{10}</PillNumber>
           </NavLink>
           <NavLink to="cart"><CartIcon />
-          <PillNumber>{inCart}</PillNumber>
+          <PillNumber>{10}</PillNumber>
           </NavLink>
         </LinkWrapper>
       </Inner>

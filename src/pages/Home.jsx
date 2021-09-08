@@ -1,15 +1,17 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import { Card, Tag, CardsContainer } from '../components'
 
 // testing data
-import { SampleCards } from '../assets/samples/allCard'
+import useGetProducts from '../hooks/useGetProducts'
 
 const Home = () => {
+  const {products} = useGetProducts()
+
   return (
     <>
       <Tag />
       <CardsContainer>
-        {SampleCards.map(card => <Card key={card.id} product={card} />)}
+        {products.map(card => <Card key={card.id} product={card} />)}
       </CardsContainer>
     </>
   )

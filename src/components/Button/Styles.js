@@ -10,7 +10,7 @@ export const CardButton = styled.button`
   justify-content: center;
   border: none;
   gap: .5em;
-  padding: .5em 1em;
+  padding: 1em 2em;
   cursor: pointer;
   &:hover {
     background-color: ${colors.buttonHoverColor};
