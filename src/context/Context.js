@@ -2,7 +2,7 @@ import { createContext, useState, useReducer } from "react"
 
 export const Context = createContext()
 
-const initialState = [{ wishList: [1, 3, 4, 6], cart: [3, 6] }]
+const initialState = [{ wishList: [], cart: [] }]
 
 function ContextProvider({ children }) {
   // const [state, dispatch] = useReducer(initialState)
@@ -10,12 +10,10 @@ function ContextProvider({ children }) {
   const [cart, setCart] = useState(initialState[0].cart)
 
   return (
-    <Context.Provider value={{ wishList, cart }}>
+    <Context.Provider value={{ wishList, setWishList, cart, setCart }}>
       {children}
     </Context.Provider>
   )
 }
 
 export default ContextProvider
-
-

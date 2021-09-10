@@ -4,6 +4,8 @@ import { Container, Inner, LinkWrapper, NavLink, LogoText, HeartIcon, CartIcon, 
 import { Context } from '../../context/Context'
 
 const Header = () => {
+  const {wishList, cart} = useContext(Context)
+  console.log(wishList, cart)
 
   return (
     <Container>
@@ -11,10 +13,10 @@ const Header = () => {
         <LogoText to="/">Sani Store</LogoText>
         <LinkWrapper>
           <NavLink to="wishlist"><HeartIcon />
-            <PillNumber>{10}</PillNumber>
+            <PillNumber>{wishList.length}</PillNumber>
           </NavLink>
           <NavLink to="cart"><CartIcon />
-          <PillNumber>{10}</PillNumber>
+          <PillNumber>{cart.length}</PillNumber>
           </NavLink>
         </LinkWrapper>
       </Inner>
