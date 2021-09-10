@@ -30,7 +30,7 @@ export const TagButton = styled.button`
     box-shadow: inset 0 0 2em #ddd;
   }
 
-  @media (min-width: 370px) {
+  @media (min-width: 480px) {
    width: auto !important;
   }
 `
