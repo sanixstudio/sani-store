@@ -6,5 +6,5 @@ export const addProduct = (item, itemList, inList, product) => {
     inList(true)
   }
 
-  return { item, itemList, inList }
+  return { item, itemList, inList, product }
 }
