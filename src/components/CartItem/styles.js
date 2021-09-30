@@ -41,15 +41,19 @@ export const CartQuantity = styled.div`
 `
 
 export const InputButton = styled.button`
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
   border: none;
   cursor: pointer;
+  opacity: .8;
 `
 
 export const InputValue = styled.span`
   border: solid 1px ${colors.lightGrey};
-  padding: .2em .5em;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
   border-radius: 5px;
 `
 

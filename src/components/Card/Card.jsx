@@ -15,10 +15,10 @@ import {
 } from './styles'
 
 import { Context } from '../../context/Context'
-import { addProduct } from '../../hooks/useAddProduct';
+// import { addProduct } from '../../hooks/useAddProduct';
 
 const Card = ({ product }) => {
-  const { wishList, setWishList, cart, setCart } = useContext(Context)
+  const { addToWishList, addToCart } = useContext(Context)
   const [alreadyInWishList, setAlreadyInWishList] = useState(false)
   const [alreadyInCart, setAlreadyInCart] = useState(false)
 
@@ -26,7 +26,8 @@ const Card = ({ product }) => {
     <Container>
       <CardDetails>
         <CardHeader>
-          {(alreadyInWishList) ? <RiHeartFill color="red" size="25" /> : <RiHeartLine color="rgba(255, 20, 2, .3)" size="25" />}
+          {(alreadyInWishList) ? <RiHeartFill color="red" size="25" /> : 
+          <RiHeartLine color="#ff14024c" size="25" />}
           <CardPrice>$ {product.price}</CardPrice>
         </CardHeader>
         {<CardImg src={product.image}></CardImg>}
@@ -34,12 +35,12 @@ const Card = ({ product }) => {
       </CardDetails>
       <CardButtons>
         <CardButton 
-          onClick={() => addProduct(wishList, setWishList, setAlreadyInWishList, product)}
+          onClick={() => addToWishList(product, alreadyInWishList)}
           disabled={alreadyInWishList}>
           <HeartIcon />Add to List
         </CardButton>
         <CardButton 
-          onClick={() => addProduct(cart, setCart, setAlreadyInCart, product)} 
+          onClick={() => addToCart(product, alreadyInCart)} 
           disabled={alreadyInCart}>
           <CartIcon />Add to Cart
         </CardButton>
