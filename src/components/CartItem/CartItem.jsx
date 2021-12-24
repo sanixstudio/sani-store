@@ -13,7 +13,7 @@ import {
 } from './styles'
 
 const CartItem = ({ product }) => {
-  const [quantity, setQuantity] = useState(0)
+  const [quantity, setQuantity] = useState(1)
 
   const Increment = () => {
     (quantity === 10) ? setQuantity(10) :
@@ -21,9 +21,12 @@ const CartItem = ({ product }) => {
   }
 
   const Decrement = () => {
-    if (quantity === 0) setQuantity(0)
-    else setQuantity(prevCount => prevCount - 1)
+    (quantity === 1) ? setQuantity(1) :
+      setQuantity(prevCount => prevCount - 1)
   }
+
+  let result = ((product.price).toFixed(2) * quantity)
+  console.log(result)
 
   return (
     <CartItemContainer>
@@ -36,7 +39,7 @@ const CartItem = ({ product }) => {
         <InputValue>{quantity}</InputValue>
         <InputButton onClick={Increment}>+</InputButton>
       </CartQuantity>
-      <CartTotal>340.40</CartTotal>
+      <CartTotal>{product.price}</CartTotal>
       <DeleteBtn />
     </CartItemContainer>
   )

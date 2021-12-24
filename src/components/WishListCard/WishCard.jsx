@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { 
   Container, 
   CardDetails, 
@@ -12,19 +12,23 @@ import {
   CartIcon
 } from './styles'
 
+import { Context } from '../../context/Context'
+
 const WishCard = ({product}) => {
+  const { addToCart } = useContext(Context)
+
   return (
     <Container>
       <CardDetails>
         <CardHeader>
           <HeaderIcon />
-          <CardPrice>$ {product.price}</CardPrice>
+          <CardPrice>$ { product.price }</CardPrice>
         </CardHeader>
-        {<CardImg src={product.image}></CardImg>}
-        <CardInfo>{product.description}</CardInfo>
+        {<CardImg src={ product.image }></CardImg>}
+        <CardInfo>{ product.description }</CardInfo>
       </CardDetails>
       <CardButtons>
-        <CardButton><CartIcon/>Add to Cart</CardButton>
+        <CardButton onClick={ () => addToCart(product) }><CartIcon/>Add to Cart</CardButton>
       </CardButtons>
     </Container>
   )

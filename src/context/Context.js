@@ -12,11 +12,17 @@ function ContextProvider({ children }) {
   const addToWishList = (product, check) => {
     const exists = wishList.find(p => p.id === product.id)
     !exists ? setWishList((prevState) => [...prevState, product]) : check = true;
+    console.log(check)
   }
 
-  const addToCart = (product, check) => {
+  const addToCart = (product, check = false) => {
     const exists = cart.find(p => p.id === product.id)
     !exists ? setCart((prevState) => [...prevState, product]) : check = true;
+    console.log(check)
+  }
+  
+  const resetCart = () => {
+    setCart([])
   }
 
   return (
@@ -25,6 +31,8 @@ function ContextProvider({ children }) {
       cart,
       addToWishList,
       addToCart,
+      resetCart,
+      total
     }}>
       {children}
     </Context.Provider>

@@ -5,7 +5,6 @@ import { Context } from '../../context/Context'
 
 const Header = () => {
   const {wishList, cart} = useContext(Context)
-  console.log(wishList, cart)
 
   return (
     <Container>

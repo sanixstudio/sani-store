@@ -1,16 +1,30 @@
-import { HomeContainer } from '../components/'
+import { Filter, HomeContainer } from '../components/'
 import { Card, CardsContainer } from '../components'
 
 // API data to display as Store Products
 import useGetProducts from '../hooks/useGetProducts'
+import { useState } from 'react'
 
 const Home = () => {
   const { products } = useGetProducts()
+  const [category, setCategory] = useState("")
+
+  console.log(...products)
+
+  function filterByCategory(categoryName) {
+    return products.filter(product => product.category === categoryName)
+  }
 
   return (
     <HomeContainer>
+      <Filter setCategory={setCategory} />
       <CardsContainer>
-        {products.map(card => <Card key={card.id} product={card} />)}
+        {
+          category ?
+            filterByCategory(category).map(card => <Card key={card.id} product={card} />) :
+            products.map(card => <Card key={card.id} product={card} />)
+        }
+
       </CardsContainer>
     </HomeContainer>
   )

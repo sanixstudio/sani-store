@@ -1,8 +1,8 @@
 import React from 'react'
 
-import {CardButton} from './Styles'
+import { CardButton } from './Styles'
 
-const Button = ({children}) => {
+const Button = ({ children }) => {
   return (
     <CardButton>
       {children}
