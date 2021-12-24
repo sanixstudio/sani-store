@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 import { colors } from '../../assets/styles/color'
-import { RiShoppingCartLine, RiHeartLine } from 'react-icons/ri';
+import { RiShoppingCartLine, RiHeartFill } from 'react-icons/ri';
 
 export const Container = styled.div`
   width: 100%;
@@ -34,7 +34,7 @@ export const CardHeader = styled.div`
   justify-content: space-between;
 `
 
-export const HeaderIcon = styled(RiHeartLine)`
+export const HeaderIcon = styled(RiHeartFill)`
   font-size: 2em;
   color: ${colors.customRed}
 `
@@ -85,7 +85,7 @@ export const CardButton = styled.button`
   }
 `
 
-export const HeartIcon = styled(RiHeartLine)`
+export const HeartIcon = styled(RiHeartFill)`
   font-size: 1.5em;
 `
 

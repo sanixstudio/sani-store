@@ -9,8 +9,6 @@ const Home = () => {
   const { products } = useGetProducts()
   const [category, setCategory] = useState("")
 
-  console.log(...products)
-
   function filterByCategory(categoryName) {
     return products.filter(product => product.category === categoryName)
   }

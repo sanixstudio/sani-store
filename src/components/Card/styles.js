@@ -34,12 +34,12 @@ export const CardHeader = styled.div`
   justify-content: space-between;
 `
 
-export const HeaderIconFill = styled(RiHeartLine)`
+export const HeaderIconLine = styled(RiHeartLine)`
 font-size: 2em;
   color: ${colors.customRed};
 `
 
-export const HeaderIcon = styled(RiHeartFill)`
+export const HeaderIconFill = styled(RiHeartFill)`
   font-size: 2em;
   color: ${colors.customRed};
 `
