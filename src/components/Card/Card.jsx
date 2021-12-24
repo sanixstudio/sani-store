@@ -17,6 +17,7 @@ import {
 } from './styles'
 
 import { Context } from '../../context/Context'
+// import { addProduct } from '../../hooks/useAddProduct';
 
 const Card = ({ product }) => {
   const { addToWishList, addToCart, wishList } = useContext(Context)
@@ -24,15 +25,16 @@ const Card = ({ product }) => {
   const [alreadyInCart, setAlreadyInCart] = useState(false)
 
   function checkProductInWishList(id) {
-    if (wishList.find(p => p.id === id)) return <HeaderIconFill />
-    else return <HeaderIconLine />
+    if (wishList.find(p => p.id === id)) return true
   }
 
   return (
     <Container>
       <CardDetails>
         <CardHeader>
-          {checkProductInWishList(product.id)}
+          {
+            checkProductInWishList(product.id) ? <HeaderIconFill /> : <HeaderIconLine />
+          }
           <CardPrice>$ {product.price}</CardPrice>
         </CardHeader>
         {<CardImg src={product.image}></CardImg>}
@@ -40,9 +42,9 @@ const Card = ({ product }) => {
       </CardDetails>
       <CardButtons>
         <CardButton
-          onClick={() => addToWishList(product, alreadyInWishList)}
-          disabled={alreadyInWishList}>
-          <HeartIcon />Add to List
+          onClick={() => addToWishList(product, alreadyInWishList)}>
+          <HeartIcon />
+          {alreadyInWishList ? "Remove" : "Add to List"}
         </CardButton>
         <CardButton
           onClick={() => addToCart(product, alreadyInCart)}

@@ -9,18 +9,21 @@ function ContextProvider({ children }) {
   const [cart, setCart] = useState([])
   const [total, setTotal] = useState(0)
 
-  const addToWishList = (product, check) => {
-    const exists = wishList.find(p => p.id === product.id)
-    !exists ? setWishList((prevState) => [...prevState, product]) : check = true;
-    console.log(check)
+  const addToWishList = (product) => {
+    const wishListCopy = [...wishList]
+    const exists = wishListCopy.find(p => p.id === product.id)
+    if (!exists) setWishList((prevState) => [...prevState, product])
+    else {
+      const filtered = wishListCopy.filter(p => p.id !== product.id)
+      setWishList(filtered)
+    }
   }
 
   const addToCart = (product, check = false) => {
     const exists = cart.find(p => p.id === product.id)
     !exists ? setCart((prevState) => [...prevState, product]) : check = true;
-    console.log(check)
   }
-  
+
   const resetCart = () => {
     setCart([])
   }

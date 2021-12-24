@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 
 import {
   CartItemContainer,
@@ -9,10 +9,13 @@ import {
   InputButton,
   InputValue,
   CartTotal,
-  DeleteBtn
+  DeleteBtn,
 } from './styles'
 
+import { Context } from '../../context/Context'
+
 const CartItem = ({ product }) => {
+  const {setTotal} = useContext(Context)
   const [quantity, setQuantity] = useState(1)
 
   const Increment = () => {
@@ -26,7 +29,6 @@ const CartItem = ({ product }) => {
   }
 
   let result = ((product.price).toFixed(2) * quantity)
-  console.log(result)
 
   return (
     <CartItemContainer>
@@ -39,7 +41,7 @@ const CartItem = ({ product }) => {
         <InputValue>{quantity}</InputValue>
         <InputButton onClick={Increment}>+</InputButton>
       </CartQuantity>
-      <CartTotal>{product.price}</CartTotal>
+      <CartTotal>$ {result.toFixed(2)}</CartTotal>
       <DeleteBtn />
     </CartItemContainer>
   )

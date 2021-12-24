@@ -57,7 +57,9 @@ export const InputValue = styled.span`
   border-radius: 5px;
 `
 
-export const CartTotal = styled.span``
+export const CartTotal = styled.span`
+  min-width: 80px;
+`
 
 export const DeleteBtn = styled(RiCloseCircleFill)`
   font-size: 3rem;
