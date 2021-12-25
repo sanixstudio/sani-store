@@ -12,10 +12,10 @@ import {
   DeleteBtn,
 } from './styles'
 
-import { Context } from '../../context/Context'
+// import { Context } from '../../context/Context'
 
 const CartItem = ({ product }) => {
-  const {setTotal} = useContext(Context)
+  // const {total, setTotal} = useContext(Context)
   const [quantity, setQuantity] = useState(1)
 
   const Increment = () => {

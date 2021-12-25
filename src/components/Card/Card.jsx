@@ -33,7 +33,9 @@ const Card = ({ product }) => {
       <CardDetails>
         <CardHeader>
           {
-            checkProductInWishList(product.id) ? <HeaderIconFill /> : <HeaderIconLine />
+            checkProductInWishList(product.id) ?
+            <HeaderIconFill onClick={() => addToWishList(product, alreadyInWishList)} /> : 
+            <HeaderIconLine onClick={() => addToWishList(product, alreadyInWishList)} />
           }
           <CardPrice>$ {product.price}</CardPrice>
         </CardHeader>
@@ -41,11 +43,6 @@ const Card = ({ product }) => {
         <CardInfo>{product.description}</CardInfo>
       </CardDetails>
       <CardButtons>
-        <CardButton
-          onClick={() => addToWishList(product, alreadyInWishList)}>
-          <HeartIcon />
-          {alreadyInWishList ? "Remove" : "Add to List"}
-        </CardButton>
         <CardButton
           onClick={() => addToCart(product, alreadyInCart)}
           disabled={alreadyInCart}>

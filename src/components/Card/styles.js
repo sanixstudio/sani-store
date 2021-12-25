@@ -35,13 +35,23 @@ export const CardHeader = styled.div`
 `
 
 export const HeaderIconLine = styled(RiHeartLine)`
-font-size: 2em;
+  font-size: 2em;
   color: ${colors.customRed};
+  cursor: pointer;
+  transition: scale .2s ease;
+  &:active {
+    transform: scale(1.2);
+  }
 `
 
 export const HeaderIconFill = styled(RiHeartFill)`
   font-size: 2em;
   color: ${colors.customRed};
+  cursor: pointer;
+  transition: scale .2s ease;
+  &:active {
+    transform: scale(1.2);
+  }
 `
 
 export const CardPrice = styled.span`
@@ -67,7 +77,7 @@ export const CardInfo = styled.div`
 export const CardButtons = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
 `
 
 export const CardButton = styled.button`
