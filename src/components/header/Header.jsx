@@ -4,7 +4,7 @@ import { Container, Inner, LinkWrapper, NavLink, LogoText, HeartIcon, CartIcon, 
 import { Context } from '../../context/Context'
 
 const Header = () => {
-  const {wishList, cart} = useContext(Context)
+  // const {wishList, cart} = useContext(Context)
 
   return (
     <Container>
@@ -12,10 +12,10 @@ const Header = () => {
         <LogoText to="/">Sani Store</LogoText>
         <LinkWrapper>
           <NavLink to="wishlist"><HeartIcon />
-            <PillNumber>{wishList.length}</PillNumber>
+            <PillNumber>3</PillNumber>
           </NavLink>
           <NavLink to="cart"><CartIcon />
-          <PillNumber>{cart.length}</PillNumber>
+          <PillNumber>2</PillNumber>
           </NavLink>
         </LinkWrapper>
       </Inner>
