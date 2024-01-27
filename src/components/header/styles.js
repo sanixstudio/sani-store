@@ -1,6 +1,5 @@
 import styled from "styled-components"
 import {colors} from '../../assets/styles/color'
-import {Link} from 'react-router-dom'
 import { RiShoppingCartLine, RiHeartLine } from 'react-icons/ri';
 
 export const Container = styled.div`
