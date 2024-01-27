@@ -11,3 +11,6 @@ export { default as HomeContainer } from "./HomeContainer/HomeContainer";
 export { default as WishCard } from "./WishListCard/WishCard";
 export { default as LoadingSpinner } from "./LoadingSpinner/LoadingSpinner";
 export { default as Hero } from "./Hero/Hero";
+export { default as Features } from "./Features/Features";
+export { default as ShopByCategories } from "./ShopByCategories/ShopByCategories";
+export { default as Carousel } from "./Carousel/Carousel";

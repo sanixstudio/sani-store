@@ -6,6 +6,9 @@ import {
   CardsContainer,
   Filter,
   LoadingSpinner,
+  Features,
+  ShopByCategories,
+  Carousel,
 } from "../components";
 import { products } from "../sample_data/data";
 
@@ -41,12 +44,10 @@ const NewHome = () => {
 
   return (
     <HomeContainer>
-      <Filter setCategory={setCategory} />
-      <CardsContainer>
-        {filterByCategory(category).map((card) => (
-          <NewCard key={card.id} product={card} />
-        ))}
-      </CardsContainer>
+      {/* <Filter setCategory={setCategory} /> */}
+      <Features />
+      <ShopByCategories />
+      <Carousel data={products} />
     </HomeContainer>
   );
 };

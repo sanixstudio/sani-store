@@ -67,10 +67,7 @@ export const CardTitle = styled.h3`
 `;
 
 export const CardImg = styled.img`
-  max-width: 100%;
-  width: 180px;
-  max-height: 200px;
-  object-fit: contain;
+ 
 `;
 
 export const CardInfo = styled.div`

@@ -173,12 +173,12 @@ const Header = () => {
 
           {/* Mobile Menu */}
           {navMenuIsOpen ? (
-            <div className="absolute md:block right-0 top-[47px] bg-slate-800 w-full md:w-fit">
-              <div className="flex flex-col md:flex-row gap-6 p-4 md:p-0 justify-center items-center">
-                <Link to="/">Home</Link>
-                <Link to="/">Shop</Link>
-                <Link to="/">About Us</Link>
-                <Link to="/">Contact Us</Link>
+            <div className="absolute z-10 md:block right-0 top-[47px] bg-slate-800 w-full md:w-fit">
+              <div className="flex flex-col md:flex-row gap-6 p-4 md:p-0 justify-center items-center py-8">
+                <Link className="hover:border-b hover:border-[#E93D83] w-full text-center border-b border-transparent" to="/">Home</Link>
+                <Link className="hover:border-b hover:border-[#E93D83] w-full text-center border-b border-transparent" to="/">Shop</Link>
+                <Link className="hover:border-b hover:border-[#E93D83] w-full text-center border-b border-transparent" to="/">About Us</Link>
+                <Link className="hover:border-b hover:border-[#E93D83] w-full text-center border-b border-transparent" to="/">Contact Us</Link>
               </div>
             </div>
           ) : null}
