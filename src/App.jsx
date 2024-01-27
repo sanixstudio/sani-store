@@ -4,12 +4,14 @@ import { Theme } from "@radix-ui/themes";
 import "./App.css";
 import Header from "./components/Header/Header";
 import NewHome from "./pages/NewHome";
+import { Hero } from "./components";
 
 function App() {
   return (
     <Theme>
       <div className="App">
         <Header />
+        <Hero />
         <Route exact path="/">
           <NewHome />
         </Route>

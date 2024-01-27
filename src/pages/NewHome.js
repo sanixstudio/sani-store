@@ -7,6 +7,7 @@ import {
   Filter,
   LoadingSpinner,
 } from "../components";
+import { products } from "../sample_data/data";
 
 const { useQuery } = require("react-query");
 
@@ -26,8 +27,8 @@ const NewHome = () => {
 
   function filterByCategory(categoryName) {
     if (categoryName)
-      return data.filter((product) => product.category === categoryName);
-    else return data;
+      return products.filter((product) => product.category === categoryName);
+    else return products.slice(0, 8);
   }
 
   if (isLoading) {
