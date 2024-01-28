@@ -15,7 +15,7 @@ type CardProps = {
     image: string;
     price: number;
     total_ratings: number;
-  }
+  };
 };
 
 const Card = ({ product }: CardProps) => {
