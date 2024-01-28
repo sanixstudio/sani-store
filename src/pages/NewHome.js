@@ -2,13 +2,11 @@
 import React, { useState } from "react";
 import {
   HomeContainer,
-  NewCard,
-  CardsContainer,
-  Filter,
   LoadingSpinner,
   Features,
   ShopByCategories,
-  Carousel,
+  ProductsGallery,
+  Banner,
 } from "../components";
 import { products } from "../sample_data/data";
 
@@ -26,13 +24,6 @@ const NewHome = () => {
     "studentResults",
     getStudentResults
   );
-  const [category, setCategory] = useState("");
-
-  function filterByCategory(categoryName) {
-    if (categoryName)
-      return products.filter((product) => product.category === categoryName);
-    else return products.slice(0, 8);
-  }
 
   if (isLoading) {
     return <LoadingSpinner />;
@@ -47,7 +38,9 @@ const NewHome = () => {
       {/* <Filter setCategory={setCategory} /> */}
       <Features />
       <ShopByCategories />
-      <Carousel data={products} />
+      <ProductsGallery data={products} title={"TOP NEW ARRIVALS"} />
+      <Banner />
+      <ProductsGallery data={products} title={"RECOMMENDED FOR YOU"} />
     </HomeContainer>
   );
 };

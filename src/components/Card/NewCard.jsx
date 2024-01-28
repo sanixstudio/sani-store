@@ -26,7 +26,7 @@ const NewCard = ({ product }) => {
 
   return (
     <div className="w-full border mx-0 my-4 flex flex-col justify-between items-center gap-4 relative group rounded-md">
-      <div className="w-full h-full p-4 flex flex-col justify-between items-center gap-4 text-sm relative">
+      <div className="w-[320px] h-full p-4 flex flex-col justify-between items-center gap-4 text-sm relative">
         <div className="absolute flex gap-4 justify-center items-center w-full h-full bg-white/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity">
           <div>
             <RiHeartLine size={32} />
@@ -45,13 +45,13 @@ const NewCard = ({ product }) => {
           <span className="text-[1.1rem] w-full font-semibold text-[#E93D83]">
             $ {product.price}
           </span>
-          <div className="flex text-yellow-500 items-center">
+          <div className="flex text-yellow-500 items-center -mb-4">
             {calculateGoldenStars(product.ratings)}{" "}
             <span className="ml-2">({product.total_ratings})</span>
           </div>
         </div>
       </div>
-      <div className="w-full -mt-4">
+      <div className="w-full">
         <button className="bg-[#E93D83] p-2 w-full text-white rounded-b-md">
           Add to cart
         </button>

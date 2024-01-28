@@ -13,4 +13,5 @@ export { default as LoadingSpinner } from "./LoadingSpinner/LoadingSpinner";
 export { default as Hero } from "./Hero/Hero";
 export { default as Features } from "./Features/Features";
 export { default as ShopByCategories } from "./ShopByCategories/ShopByCategories";
-export { default as Carousel } from "./Carousel/Carousel";
+export { default as ProductsGallery } from "./ProductsGallery/ProductsGallery";
+export { default as Banner } from "./Banner/Banner";
