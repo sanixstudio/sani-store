@@ -19,9 +19,14 @@ export default {
       type: 'number',
     },
     {
-      name: 'image',
-      title: 'Image URL',
-      type: 'file',
+      name: 'images',
+      title: 'Images',
+      type: 'array',
+      of: [
+        {
+          type: 'image',
+        },
+      ],
     },
     {
       name: 'price',

@@ -6,6 +6,7 @@ import "@radix-ui/themes/styles.css";
 import App from "./App.tsx";
 import ProductDetails from "./pages/ProductDetails.tsx";
 import Page404 from "./pages/Page404.tsx";
+import { Theme } from "@radix-ui/themes";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Theme accentColor="crimson">
+      <RouterProvider router={router} />
+    </Theme>
   </React.StrictMode>
 );

@@ -15,6 +15,8 @@ const useGetDataFromSanity = () => {
     } catch (error) {
       console.log(error);
       setError(error as Error); // Cast error to Error type
+    } finally {
+      setIsLoading(false);
     }
   }, []);
 

@@ -1,4 +1,5 @@
 import { RiHeartLine, RiSearchLine } from "react-icons/ri";
+import { getImage } from "../utils/getImages";
 
 const GrayStar = () => {
   return <span className="text-gray-300 text-xl">☆</span>;
@@ -8,7 +9,7 @@ const GoldenStar = () => {
   return <span className="text-yellow-500 text-xl">★</span>;
 };
 
-type CardProps = {
+type ProductCardProps = {
   product: {
     name: string;
     ratings: number;
@@ -18,7 +19,7 @@ type CardProps = {
   };
 };
 
-const Card = ({ product }: CardProps) => {
+const ProductCard = ({ product }: ProductCardProps) => {
   const calculateGoldenStars = (ratings: number) => {
     const ratingsValue = Math.floor(ratings);
     const stars = [];
@@ -46,7 +47,11 @@ const Card = ({ product }: CardProps) => {
           </div>
         </div>
         <div className="bg-gray-50">
-          <img className="w-full" src={product.image} alt="product" />
+          <img
+            className="w-full"
+            src={getImage(product?.images[0].asset._ref)}
+            alt="product"
+          />
         </div>
         <div className="flex flex-col w-full gap-2 mt-2">
           <span className="text-[1.1rem] uppercase font-semibold w-full">
@@ -70,4 +75,4 @@ const Card = ({ product }: CardProps) => {
   );
 };
 
-export default Card;
+export default ProductCard;
