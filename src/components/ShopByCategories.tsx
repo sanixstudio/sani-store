@@ -1,6 +1,9 @@
-import electronicsImage from "../assets/images/electronics.jpg";
-import clothesImage from "../assets/images/clothes.png";
-import decor from "../assets/images/decor.png";
+import { Button } from "@radix-ui/themes";
+import { SiDell, SiApple, SiHp } from "react-icons/si";
+
+import apple from "../assets/images/apple_bg.jpg";
+import dell from "../assets/images/dell_bg.png";
+import hp from "../assets/images/hp_bg.png";
 
 const ShopByCategories = () => {
   return (
@@ -11,37 +14,46 @@ const ShopByCategories = () => {
           <div
             className="min-h-[250px] relative bg-gray-100 rounded-lg shadow-lg"
             style={{
-              backgroundImage: `url(${clothesImage})`,
+              backgroundImage: `url(${apple})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
           >
-            <div className="absolute top-0 left-0 w-full h-full bg-black/60 text-[#fff] flex justify-center items-center">
-              <span className="font-bold text-2xl">Clothes</span>
+            <div className="absolute top-0 left-0 w-full h-full bg-black/40 text-[#fff] flex justify-center items-center">
+              <Button size={"4"} className="font-bold rounded-full">
+                <SiApple size={32} />
+                APPLE
+              </Button>
             </div>
           </div>
           <div
             className="min-h-[250px] relative bg-gray-100 rounded-lg shadow-lg"
             style={{
-              backgroundImage: `url(${electronicsImage})`,
+              backgroundImage: `url(${dell})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
           >
-            <div className="absolute top-0 left-0 w-full h-full bg-black/60 text-[#fff] flex justify-center items-center">
-              <span className="font-bold text-2xl">Electronics</span>
+            <div className="absolute top-0 left-0 w-full h-full bg-black/40 text-[#fff] flex justify-center items-center">
+              <Button size={"4"} className="font-bold rounded-full">
+                <SiDell size={32} />
+                DELL
+              </Button>
             </div>
           </div>
           <div
             className="min-h-[250px] relative bg-gray-100 rounded-lg shadow-lg"
             style={{
-              backgroundImage: `url(${decor})`,
+              backgroundImage: `url(${hp})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
           >
-            <div className="absolute top-0 left-0 w-full h-full bg-black/60 text-[#fff] flex justify-center items-center">
-              <span className="font-bold text-2xl">Decoration</span>
+            <div className="absolute top-0 left-0 w-full h-full bg-black/40 text-[#fff] flex justify-center items-center">
+              <Button size={"4"} className="font-bold rounded-full">
+                <SiHp size={32} />
+                HP
+              </Button>
             </div>
           </div>
         </div>

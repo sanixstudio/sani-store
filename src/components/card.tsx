@@ -1,5 +1,7 @@
 import { RiHeartLine, RiSearchLine } from "react-icons/ri";
 import { getImage } from "../utils/getImages";
+import { LaptopProduct } from "../types";
+import { Link } from "react-router-dom";
 
 const GrayStar = () => {
   return <span className="text-gray-300 text-xl">☆</span>;
@@ -9,17 +11,7 @@ const GoldenStar = () => {
   return <span className="text-yellow-500 text-xl">★</span>;
 };
 
-type ProductCardProps = {
-  product: {
-    name: string;
-    ratings: number;
-    image: string;
-    price: number;
-    total_ratings: number;
-  };
-};
-
-const ProductCard = ({ product }: ProductCardProps) => {
+const ProductCard = ({ laptop }: { laptop: LaptopProduct }) => {
   const calculateGoldenStars = (ratings: number) => {
     const ratingsValue = Math.floor(ratings);
     const stars = [];
@@ -42,27 +34,30 @@ const ProductCard = ({ product }: ProductCardProps) => {
           <div className="rounded-full bg-[#e93d83] text-white p-2 cursor-pointer">
             <RiHeartLine size={32} />
           </div>
-          <div className="rounded-full bg-[#e93d83] text-white p-2 cursor-pointer">
+          <Link
+            to={`/product-details/${laptop._id}`}
+            className="rounded-full bg-[#e93d83] text-white p-2 cursor-pointer"
+          >
             <RiSearchLine size={32} />
-          </div>
+          </Link>
         </div>
-        <div className="bg-gray-50">
+        <div>
           <img
-            className="w-full"
-            src={getImage(product?.images[0].asset._ref)}
-            alt="product"
+            className="w-full p-4"
+            src={getImage(laptop.mainImage.asset._ref)}
+            alt="laptop"
           />
         </div>
-        <div className="flex flex-col w-full gap-2 mt-2">
+        <div className="flex flex-col w-full gap-2 mt-2 px-4">
           <span className="text-[1.1rem] uppercase font-semibold w-full">
-            {product.name}
+            {laptop.title}
           </span>
           <span className="text-[1.1rem] w-full font-semibold text-[#E93D83]">
-            $ {product.price}
+            $ {laptop.price}
           </span>
           <div className="flex text-yellow-500 items-center -mb-4">
-            {calculateGoldenStars(product.ratings)}{" "}
-            <span className="ml-2">({product.total_ratings})</span>
+            {calculateGoldenStars(laptop.rating)}{" "}
+            <span className="ml-2">({laptop.totalReviews})</span>
           </div>
         </div>
       </div>

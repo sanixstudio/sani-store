@@ -1,0 +1,512 @@
+[
+  {
+    "_type": "laptop",
+    "title": "MacBook Air",
+    "longTitle": "",
+    "description": "Ultra-thin and lightweight laptop from Apple.",
+    "category": "Apple",
+    "model": "Air",
+    "sku": "MACBOOK-AIR-001",
+    "price": 999.99,
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_type": "reference",
+        "_ref": "macbook-air-image-1"
+      }
+    },
+    "productImages": [
+      {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "macbook-air-image-2"
+        }
+      },
+      {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "macbook-air-image-3"
+        }
+      }
+    ],
+    "highlightFeatures": [
+      "Thin and lightweight",
+      "Retina display",
+      "Apple M1 chip"
+    ],
+    "specs": {
+      "screenSize": 13.3,
+      "screenResolution": "Retina",
+      "isTouchScreen": false,
+      "refreshRate": 60,
+      "brightness": 400,
+      "processorModel": "Apple M1",
+      "cpuBaseClockFrequency": 3.2,
+      "storageType": "SSD",
+      "totalStorageCapacity": 256,
+      "systemMemoryRam": 8,
+      "graphics": "Apple GPU"
+    }
+  },
+  {
+    "_type": "laptop",
+    "title": "Dell XPS 15",
+    "longTitle": "",
+    "description": "Powerful laptop for professionals and gamers.",
+    "category": "Dell",
+    "model": "XPS 15",
+    "sku": "DELL-XPS15-001",
+    "price": 1499.99,
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_type": "reference",
+        "_ref": "dell-xps15-image-1"
+      }
+    },
+    "productImages": [
+      {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "dell-xps15-image-2"
+        }
+      },
+      {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "dell-xps15-image-3"
+        }
+      }
+    ],
+    "highlightFeatures": [
+      "Powerful performance",
+      "4K OLED display",
+      "Dedicated GPU"
+    ],
+    "specs": {
+      "screenSize": 15.6,
+      "screenResolution": "4K OLED",
+      "isTouchScreen": false,
+      "refreshRate": 60,
+      "brightness": 500,
+      "processorModel": "Intel Core i9",
+      "cpuBaseClockFrequency": 2.9,
+      "storageType": "SSD",
+      "totalStorageCapacity": 512,
+      "systemMemoryRam": 32,
+      "graphics": "NVIDIA GeForce RTX 3070"
+    }
+  },
+  {
+    "_type": "laptop",
+    "title": "MacBook Pro 16-inch",
+    "longTitle": "",
+    "description": "High-performance laptop for creative professionals.",
+    "category": "Apple",
+    "model": "Pro 16-inch",
+    "sku": "MACBOOK-PRO16-001",
+    "price": 2499.99,
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_type": "reference",
+        "_ref": "macbook-pro16-image-1"
+      }
+    },
+    "productImages": [
+      {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "macbook-pro16-image-2"
+        }
+      },
+      {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "macbook-pro16-image-3"
+        }
+      }
+    ],
+    "highlightFeatures": [
+      "Large Retina display",
+      "High-performance CPU",
+      "Dedicated GPU"
+    ],
+    "specs": {
+      "screenSize": 16,
+      "screenResolution": "Retina",
+      "isTouchScreen": false,
+      "refreshRate": 60,
+      "brightness": 500,
+      "processorModel": "Intel Core i9",
+      "cpuBaseClockFrequency": 2.3,
+      "storageType": "SSD",
+      "totalStorageCapacity": 1,
+      "systemMemoryRam": 32,
+      "graphics": "AMD Radeon Pro 5500M"
+    }
+  },
+  {
+    "_type": "laptop",
+    "title": "Dell Inspiron 14",
+    "longTitle": "",
+    "description": "Affordable laptop for everyday use.",
+    "category": "Dell",
+    "model": "Inspiron 14",
+    "sku": "DELL-INSPIRON14-001",
+    "price": 699.99,
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_type": "reference",
+        "_ref": "dell-inspiron14-image-1"
+      }
+    },
+    "productImages": [
+      {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "dell-inspiron14-image-2"
+        }
+      },
+      {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "dell-inspiron14-image-3"
+        }
+      }
+    ],
+    "highlightFeatures": [
+      "Budget-friendly",
+      "Decent performance",
+      "Compact design"
+    ],
+    "specs": {
+      "screenSize": 14,
+      "screenResolution": "Full HD",
+      "isTouchScreen": false,
+      "refreshRate": 60,
+      "brightness": 300,
+      "processorModel": "Intel Core i5",
+      "cpuBaseClockFrequency": 2.4,
+      "storageType": "HDD",
+      "totalStorageCapacity": 1,
+      "systemMemoryRam": 8,
+      "graphics": "Intel UHD Graphics 620"
+    }
+  },
+  {
+    "_type": "laptop",
+    "title": "HP Pavilion 15",
+    "longTitle": "",
+    "description": "Versatile laptop for everyday tasks and entertainment.",
+    "category": "HP",
+    "model": "Pavilion 15",
+    "sku": "HP-PAVILION15-001",
+    "price": 799.99,
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_type": "reference",
+        "_ref": "hp-pavilion15-image-1"
+      }
+    },
+    "productImages": [
+      {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "hp-pavilion15-image-2"
+        }
+      },
+      {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "hp-pavilion15-image-3"
+        }
+      }
+    ],
+    "highlightFeatures": [
+      "Affordable price",
+      "Decent performance",
+      "Full HD display"
+    ],
+    "specs": {
+      "screenSize": 15.6,
+      "screenResolution": "Full HD",
+      "isTouchScreen": false,
+      "refreshRate": 60,
+      "brightness": 350,
+      "processorModel": "Intel Core i5",
+      "cpuBaseClockFrequency": 2.6,
+      "storageType": "SSD",
+      "totalStorageCapacity": 512,
+      "systemMemoryRam": 16,
+      "graphics": "Intel UHD Graphics"
+    }
+  },
+  {
+    "_type": "laptop",
+    "title": "MacBook Pro 13-inch",
+    "longTitle": "",
+    "description": "Compact and powerful laptop for professionals on the go.",
+    "category": "Apple",
+    "model": "Pro 13-inch",
+    "sku": "MACBOOK-PRO13-001",
+    "price": 1399.99,
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_type": "reference",
+        "_ref": "macbook-pro13-image-1"
+      }
+    },
+    "productImages": [
+      {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "macbook-pro13-image-2"
+        }
+      },
+      {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "macbook-pro13-image-3"
+        }
+      }
+    ],
+    "highlightFeatures": [
+      "Compact size",
+      "High-resolution display",
+      "Apple M1 chip"
+    ],
+    "specs": {
+      "screenSize": 13.3,
+      "screenResolution": "Retina",
+      "isTouchScreen": false,
+      "refreshRate": 60,
+      "brightness": 400,
+      "processorModel": "Apple M1",
+      "cpuBaseClockFrequency": 3.2,
+      "storageType": "SSD",
+      "totalStorageCapacity": 512,
+      "systemMemoryRam": 16,
+      "graphics": "Apple GPU"
+    }
+  },
+  {
+    "_type": "laptop",
+    "title": "Dell Inspiron 13 2-in-1",
+    "longTitle": "",
+    "description": "Convertible laptop with touchscreen for flexibility.",
+    "category": "Dell",
+    "model": "Inspiron 13 2-in-1",
+    "sku": "DELL-INSPIRON13-001",
+    "price": 1099.99,
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_type": "reference",
+        "_ref": "dell-inspiron13-2in1-image-1"
+      }
+    },
+    "productImages": [
+      {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "dell-inspiron13-2in1-image-2"
+        }
+      },
+      {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "dell-inspiron13-2in1-image-3"
+        }
+      }
+    ],
+    "highlightFeatures": [
+      "Convertible design",
+      "Touchscreen display",
+      "Decent performance"
+    ],
+    "specs": {
+      "screenSize": 13.3,
+      "screenResolution": "Full HD",
+      "isTouchScreen": true,
+      "refreshRate": 60,
+      "brightness": 350,
+      "processorModel": "Intel Core i7",
+      "cpuBaseClockFrequency": 2.8,
+      "storageType": "SSD",
+      "totalStorageCapacity": 256,
+      "systemMemoryRam": 16,
+      "graphics": "Intel Iris Xe"
+    }
+  },
+  {
+    "_type": "laptop",
+    "title": "HP Omen 15",
+    "longTitle": "",
+    "description": "Gaming laptop with high-refresh-rate display.",
+    "category": "HP",
+    "model": "Omen 15",
+    "sku": "HP-OMEN15-001",
+    "price": 1699.99,
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_type": "reference",
+        "_ref": "hp-omen15-image-1"
+      }
+    },
+    "productImages": [
+      {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "hp-omen15-image-2"
+        }
+      },
+      {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "hp-omen15-image-3"
+        }
+      }
+    ],
+    "highlightFeatures": [
+      "Gaming performance",
+      "High refresh rate",
+      "Dedicated GPU"
+    ],
+    "specs": {
+      "screenSize": 15.6,
+      "screenResolution": "Full HD",
+      "isTouchScreen": false,
+      "refreshRate": 144,
+      "brightness": 300,
+      "processorModel": "Intel Core i7",
+      "cpuBaseClockFrequency": 2.9,
+      "storageType": "SSD",
+      "totalStorageCapacity": 512,
+      "systemMemoryRam": 32,
+      "graphics": "NVIDIA GeForce RTX 3080"
+    }
+  },
+  {
+    "_type": "laptop",
+    "title": "Dell Latitude 14",
+    "longTitle": "",
+    "description": "Business laptop with a focus on security and reliability.",
+    "category": "Apple",
+    "model": "Latitude 14",
+    "sku": "DELL-LATITUDE14-001",
+    "price": 1199.99,
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_type": "reference",
+        "_ref": "dell-latitude14-image-1"
+      }
+    },
+    "productImages": [
+      {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "dell-latitude14-image-2"
+        }
+      },
+      {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "dell-latitude14-image-3"
+        }
+      }
+    ],
+    "highlightFeatures": [
+      "Business-focused",
+      "Security features",
+      "Reliable performance"
+    ],
+    "specs": {
+      "screenSize": 14,
+      "screenResolution": "Full HD",
+      "isTouchScreen": false,
+      "refreshRate": 60,
+      "brightness": 350,
+      "processorModel": "Intel Core i7",
+      "cpuBaseClockFrequency": 2.6,
+      "storageType": "SSD",
+      "totalStorageCapacity": 512,
+      "systemMemoryRam": 16,
+      "graphics": "Intel UHD Graphics"
+    }
+  },
+  {
+    "_type": "laptop",
+    "title": "HP Spectre x360",
+    "longTitle": "",
+    "description": "Premium 2-in-1 laptop with a sleek design and 4K display.",
+    "category": "HP",
+    "model": "Spectre x360",
+    "sku": "HP-SPECTREX360-001",
+    "price": 1599.99,
+    "mainImage": {
+      "_type": "image",
+      "asset": {
+        "_type": "reference",
+        "_ref": "hp-spectre-x360-image-1"
+      }
+    },
+    "productImages": [
+      {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "hp-spectre-x360-image-2"
+        }
+      },
+      {
+        "_type": "image",
+        "asset": {
+          "_type": "reference",
+          "_ref": "hp-spectre-x360-image-3"
+        }
+      }
+    ],
+    "highlightFeatures": [
+      "Premium build",
+      "Convertible design",
+      "4K OLED display"
+    ],
+    "specs": {
+      "screenSize": 13.3,
+      "screenResolution": "4K OLED",
+      "isTouchScreen": true,
+      "refreshRate": 60,
+      "brightness": 400,
+      "processorModel": "Intel Core i7",
+      "cpuBaseClockFrequency": 2.8,
+      "storageType": "SSD",
+      "totalStorageCapacity": 512,
+      "systemMemoryRam": 16,
+      "graphics": "Intel Iris Xe"
+    }
+  }
+]

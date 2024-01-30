@@ -1,24 +1,17 @@
-import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
 import { sanityClient } from "../lib/sanity";
 
-const useGetDataFromSanity = () => {
-  const [products, setProducts] = useState(null);
-  const [isLoading, setIsLoading] = useState<boolean>(false);
-  const [error, setError] = useState<Error | null>(null);
+const fetchProductsFromSanity = async () => {
+  const data = await sanityClient.fetch(`*[_type == "laptop"]`);
+  return data;
+};
 
-  useEffect(() => {
-    try {
-      setIsLoading(true);
-      sanityClient.fetch(`*[_type == "product"]`).then((data) => {
-        setProducts(data);
-      });
-    } catch (error) {
-      console.log(error);
-      setError(error as Error); // Cast error to Error type
-    } finally {
-      setIsLoading(false);
-    }
-  }, []);
+const useGetDataFromSanity = () => {
+  const {
+    data: products,
+    error,
+    isLoading,
+  } = useQuery({ queryKey: ["products"], queryFn: fetchProductsFromSanity });
 
   return { products, error, isLoading };
 };

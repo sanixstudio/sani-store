@@ -39,7 +39,7 @@ const Banner = () => {
               style={{ textShadow: "2px 2px 1px #000000" }}
               className="md:text-2xl"
             >
-              Men Shirts, Laptops, Speakers and Fry pans
+              Apple, Dell and HP Laptops
             </span>
             <Button className="self-start">Shop Now</Button>
           </div>
