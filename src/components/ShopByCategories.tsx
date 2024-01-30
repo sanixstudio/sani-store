@@ -19,7 +19,7 @@ const ShopByCategories = () => {
               backgroundPosition: "center",
             }}
           >
-            <div className="absolute top-0 left-0 w-full h-full bg-black/40 text-[#fff] flex justify-center items-center">
+            <div className="absolute top-0 left-0 w-full h-full rounded-lg bg-black/40 text-[#fff] flex justify-center items-center">
               <Button size={"4"} className="font-bold rounded-full">
                 <SiApple size={32} />
                 APPLE
@@ -34,7 +34,7 @@ const ShopByCategories = () => {
               backgroundPosition: "center",
             }}
           >
-            <div className="absolute top-0 left-0 w-full h-full bg-black/40 text-[#fff] flex justify-center items-center">
+            <div className="absolute top-0 left-0 w-full h-full rounded-lg bg-black/40 text-[#fff] flex justify-center items-center">
               <Button size={"4"} className="font-bold rounded-full">
                 <SiDell size={32} />
                 DELL
@@ -49,7 +49,7 @@ const ShopByCategories = () => {
               backgroundPosition: "center",
             }}
           >
-            <div className="absolute top-0 left-0 w-full h-full bg-black/40 text-[#fff] flex justify-center items-center">
+            <div className="absolute top-0 left-0 w-full h-full rounded-lg bg-black/40 text-[#fff] flex justify-center items-center">
               <Button size={"4"} className="font-bold rounded-full">
                 <SiHp size={32} />
                 HP

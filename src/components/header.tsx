@@ -10,6 +10,7 @@ import {
 import { Button, DropdownMenu } from "@radix-ui/themes";
 
 import { Link } from "react-router-dom";
+import { SiApple, SiDell, SiHp } from "react-icons/si";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -111,34 +112,27 @@ const Header = () => {
             </DropdownMenu.Trigger>
             <DropdownMenu.Content className="w-full">
               <DropdownMenu.Item className="hover:bg-[#E93D83] min-w-[150px]">
-                <Link to="/" className="w-full">
+                <Link to="/all-products" className="w-full">
                   All
-                </Link>
-              </DropdownMenu.Item>
-              <DropdownMenu.Item className="hover:bg-[#E93D83] min-w-[150px]">
-                <Link to="/" className="w-full">
-                  Men
-                </Link>
-              </DropdownMenu.Item>
-              <DropdownMenu.Item className="hover:bg-[#E93D83] min-w-[150px]">
-                <Link to="/" className="w-full">
-                  Women
-                </Link>
-              </DropdownMenu.Item>
-              <DropdownMenu.Item className="hover:bg-[#E93D83] min-w-[150px]">
-                <Link to="/" className="w-full">
-                  Children
                 </Link>
               </DropdownMenu.Item>
               <DropdownMenu.Separator />
               <DropdownMenu.Item className="hover:bg-[#E93D83] min-w-[150px]">
-                <Link to="/" className="w-full">
-                  Jewelry
+                <Link to="/apple" className="w-full flex items-center gap-2">
+                  <SiApple />
+                  APPLE
                 </Link>
               </DropdownMenu.Item>
               <DropdownMenu.Item className="hover:bg-[#E93D83] min-w-[150px]">
-                <Link to="/" className="w-full">
-                  Electronics
+                <Link to="/dell" className="w-full flex items-center gap-2">
+                  <SiDell />
+                  DELL
+                </Link>
+              </DropdownMenu.Item>
+              <DropdownMenu.Item className="hover:bg-[#E93D83] min-w-[150px]">
+                <Link to="/hp" className="w-full flex items-center gap-2">
+                  <SiHp />
+                  HP
                 </Link>
               </DropdownMenu.Item>
             </DropdownMenu.Content>
@@ -164,9 +158,9 @@ const Header = () => {
             <div className="hidden md:block right-0 top-[47px] bg-slate-800 w-full md:w-fit">
               <div className="flex flex-col md:flex-row gap-8 p-4 md:p-0 justify-center items-center">
                 <Link to="/">Home</Link>
-                <Link to="/">Shop</Link>
-                <Link to="/">About Us</Link>
-                <Link to="/">Contact Us</Link>
+                <Link to="/all-products">Shop</Link>
+                <Link to="/about">About Us</Link>
+                <Link to="/contact">Contact Us</Link>
               </div>
             </div>
           )}

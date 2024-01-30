@@ -8,6 +8,12 @@ import { Theme } from "@radix-ui/themes";
 import App from "./App.tsx";
 import ProductDetails from "./pages/ProductDetails.tsx";
 import Page404 from "./pages/Page404.tsx";
+import Apple from "./pages/Apple.tsx";
+import Dell from "./pages/Dell.tsx";
+import Hp from "./pages/Hp.tsx";
+import AllProducts from "./pages/AllProducts.tsx";
+import About from "./pages/About.tsx";
+import Contact from "./pages/Contact.tsx";
 
 const router = createBrowserRouter([
   {
@@ -15,8 +21,32 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
+    path: "/about",
+    element: <About />,
+  },
+  {
+    path: "/contact",
+    element: <Contact />,
+  },
+  {
     path: "/product-details/:id",
     element: <ProductDetails />,
+  },
+  {
+    path: "/all-products",
+    element: <AllProducts />,
+  },
+  {
+    path: "/apple",
+    element: <Apple />,
+  },
+  {
+    path: "/dell",
+    element: <Dell />,
+  },
+  {
+    path: "/hp",
+    element: <Hp />,
   },
   {
     path: "*",
