@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { TiStarFullOutline } from "react-icons/ti";
 import { useLocation } from "react-router-dom";
 import { LaptopProduct } from "../types";
@@ -27,8 +27,19 @@ const SpecsTable = ({ product }: { product: Pick<LaptopProduct, "specs"> }) => {
         <Table.Body>
           {Object.entries(product?.specs || {}).map(([key, value]) => (
             <Table.Row key={key}>
-              <Table.Cell>{key}</Table.Cell>
-              <Table.Cell>{value}</Table.Cell>
+              <Table.Cell>
+                <span className="capitalize">{key}</span>
+              </Table.Cell>
+              <Table.Cell>
+                {value === false ? "No" : value === true ? "Yes" : value}
+                {key === "refreshRate" ? " Hz" : ""}
+                {key === "brightness" ? " Nits" : ""}
+                {key === "screenSize" ? " Inches" : ""}
+                {key === "systemMemoryRam" ? " GB" : ""}
+                {key === "totalStorageCapacity" ? " GB" : ""}
+                {key === "cpuBaseClockFrequency" ? " GHz" : ""}
+                {key === "screenResolution" ? " Pixels" : ""}
+              </Table.Cell>
             </Table.Row>
           ))}
         </Table.Body>
@@ -38,10 +49,27 @@ const SpecsTable = ({ product }: { product: Pick<LaptopProduct, "specs"> }) => {
 };
 
 export default function ProductDetails() {
+  const [displayImage, setDisplayImage] = useState<string>("");
   const pathName = useLocation().pathname;
   const productId = pathName.split("/")[2];
 
   const { products, isLoading, error } = useGetDataFromSanity();
+  console.log(products);
+
+  const product = products?.find(
+    (product: LaptopProduct) => product?._id === productId
+  );
+
+  useEffect(() => {
+    if (product) {
+      const img = getImage(product?.mainImage?.asset?._ref);
+      setDisplayImage(img);
+    }
+  }, [product]);
+
+  if (!product) {
+    return <div>Product not found</div>;
+  }
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -51,23 +79,12 @@ export default function ProductDetails() {
     return <div>Error: {error.message}</div>;
   }
 
-  const product = products.find(
-    (product: LaptopProduct) => product._id === productId
-  );
-
-  if (!product) {
-    return <div>Product not found</div>;
-  }
-
-  const initialDisplayImage = getImage(product?.mainImage?.asset?._ref);
-  const [displayImage, setDisplayImage] = useState(initialDisplayImage);
-
   return (
     <Layout>
       <div className="bg-white">
         <div className="pt-6 max-w-2xl lg:max-w-7xl mx-auto">
           <div className="mx-auto max-w-2xl px-4 pb-10 pt-10 sm:px-6 lg:grid lg:max-w-7xl">
-            <h2 className="text-4xl font-bold">{product.title}</h2>
+            <h2 className="text-2xl md:text-4xl font-bold">{product.title}</h2>
           </div>
           {/* Image gallery */}
           <div className="grid gap-4 px-6">
@@ -98,7 +115,9 @@ export default function ProductDetails() {
           {/* Product info */}
           <div className="mx-auto px-4 pb-16 pt-10 sm:px-6 lg:grid lg:grid-cols-3 lg:grid-rows-[auto,auto,1fr] lg:gap-x-8 lg:px-8 lg:pb-24 lg:pt-16">
             <div className="lg:col-span-2 lg:border-r lg:border-gray-200 lg:pr-8">
-              <h2 className="text-2xl font-bold">{product.longTitle}</h2>
+              <h2 className="text-lg md:text-2xl font-bold">
+                {product.longTitle}
+              </h2>
               <h1 className="text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl">
                 {product.name}
               </h1>
@@ -106,7 +125,7 @@ export default function ProductDetails() {
             {/* Options */}
             <div className="mt-4 lg:row-span-3 lg:mt-0">
               <h2 className="sr-only">Product information</h2>
-              <p className="text-3xl tracking-tight text-gray-900">
+              <p className="text-2xl md:text-3xl tracking-tight font-bold text-[#E93D83]">
                 ${product.price}
               </p>
               {/* Reviews */}
@@ -114,12 +133,12 @@ export default function ProductDetails() {
                 <h3 className="sr-only">Reviews</h3>
                 <div className="flex items-center">
                   <div className="flex items-center">
-                    {[...Array(5)].map((_, rating) => (
+                    {Array.from({ length: 5 }, (_, index) => (
                       <TiStarFullOutline
-                        key={rating}
+                        key={index}
                         className={classNames(
-                          product.total_reviews > rating
-                            ? "text-gray-900"
+                          product.rating > index
+                            ? "text-yellow-400"
                             : "text-gray-200",
                           "h-5 w-5 flex-shrink-0"
                         )}
@@ -127,7 +146,9 @@ export default function ProductDetails() {
                       />
                     ))}
                   </div>
-                  <p className="sr-only">{product.rating} out of 5 stars</p>
+                  <p className="ml-2 text-gray-900">
+                    {product.rating.toFixed(1)} out of 5 stars
+                  </p>
                 </div>
               </div>
               <form className="mt-10">

@@ -17,11 +17,11 @@ const ProductCard = ({ laptop }: { laptop: LaptopProduct }) => {
     const stars = [];
 
     for (let i = 0; i < 5; i++) {
-      stars.push(<GrayStar />);
+      stars.push(<GrayStar key={i} />);
     }
 
     for (let i = 0; i < ratingsValue; i++) {
-      stars[i] = <GoldenStar />;
+      stars[i] = <GoldenStar key={i} />;
     }
 
     return stars;
