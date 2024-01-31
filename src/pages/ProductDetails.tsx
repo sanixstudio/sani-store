@@ -54,7 +54,6 @@ export default function ProductDetails() {
   const productId = pathName.split("/")[2];
 
   const { products, isLoading, error } = useGetDataFromSanity();
-  console.log(products);
 
   const product = products?.find(
     (product: LaptopProduct) => product?._id === productId
@@ -97,8 +96,8 @@ export default function ProductDetails() {
             </div>
             <div className="flex gap-4 mt-4 bg-slate-200 p-2 rounded-lg items-center overflow-x-scroll">
               {product.productImages.map(
-                (image: { asset: { _ref: string } }) => (
-                  <div key={image?.asset?._ref}>
+                (image: { asset: { _ref: string } }, index: number) => (
+                  <div key={`${image?.asset?._ref}-${index}`}>
                     <img
                       onClick={() =>
                         setDisplayImage(getImage(image?.asset?._ref))

@@ -14,6 +14,7 @@ import Hp from "./pages/Hp.tsx";
 import AllProducts from "./pages/AllProducts.tsx";
 import About from "./pages/About.tsx";
 import Contact from "./pages/Contact.tsx";
+import { ClerkProvider } from "@clerk/clerk-react";
 
 const router = createBrowserRouter([
   {
@@ -54,14 +55,22 @@ const router = createBrowserRouter([
   },
 ]);
 
+const PUBLISHABLE_KEY = import.meta.env.VITE_CLERK_PUBLISHABLE_KEY;
+
+if (!PUBLISHABLE_KEY) {
+  throw new Error("Missing Publishable Key");
+}
+
 const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <Theme accentColor="crimson">
-      <QueryClientProvider client={queryClient}>
-        <RouterProvider router={router} />
-      </QueryClientProvider>
-    </Theme>
+    <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
+      <Theme accentColor="crimson">
+        <QueryClientProvider client={queryClient}>
+          <RouterProvider router={router} />
+        </QueryClientProvider>
+      </Theme>
+    </ClerkProvider>
   </React.StrictMode>
 );

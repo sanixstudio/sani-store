@@ -11,10 +11,17 @@ import { Button, DropdownMenu } from "@radix-ui/themes";
 
 import { Link } from "react-router-dom";
 import { SiApple, SiDell, SiHp } from "react-icons/si";
+import {
+  SignInButton,
+  SignOutButton,
+  UserButton,
+  useUser,
+} from "@clerk/clerk-react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [navMenuIsOpen, setNavMenuIsOpen] = useState(false);
+  const user = useUser();
 
   const toggleSearchMenu = () => {
     setIsOpen(!isOpen);
@@ -48,10 +55,10 @@ const Header = () => {
           ) : null}
           <div className="w-fit">
             <a href="/" className="flex gap-2">
-              <span className="text-2xl md:text-4xl font-bold text-[#E93D83]">
+              <span className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#E93D83]">
                 SANI{" "}
               </span>
-              <span className="text-2xl md:text-4xl font-bold text-[#1F2937]">
+              <span className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#1F2937]">
                 STORE
               </span>
             </a>
@@ -84,9 +91,7 @@ const Header = () => {
                 2
               </div>
             </Link>
-            <Link className="relative text-white" to="/">
-              <RiUser3Line size={28} color="gray" />
-            </Link>
+            {!user ? <SignInButton /> : <UserButton />}
           </div>
         </div>
       </div>

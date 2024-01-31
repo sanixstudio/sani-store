@@ -18,8 +18,6 @@ const ProductsGallery = ({ title }: ProductsGalleryProps) => {
     return <div>Error: {error.message}</div>;
   }
 
-  console.log(products);
-
   return (
     <div className="mt-10 w-full mb-20">
       <div className="px-4 max-w-[1440px] mx-auto">
