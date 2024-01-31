@@ -2,7 +2,6 @@ import { useState } from "react";
 import {
   RiShoppingCartLine,
   RiHeartLine,
-  RiUser3Line,
   RiSearchLine,
   RiMenuFill,
   RiCloseLine,
@@ -11,17 +10,12 @@ import { Button, DropdownMenu } from "@radix-ui/themes";
 
 import { Link } from "react-router-dom";
 import { SiApple, SiDell, SiHp } from "react-icons/si";
-import {
-  SignInButton,
-  SignOutButton,
-  UserButton,
-  useUser,
-} from "@clerk/clerk-react";
+import { SignInButton, UserButton, useAuth } from "@clerk/clerk-react";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [navMenuIsOpen, setNavMenuIsOpen] = useState(false);
-  const user = useUser();
+  const { isSignedIn } = useAuth();
 
   const toggleSearchMenu = () => {
     setIsOpen(!isOpen);
@@ -91,7 +85,11 @@ const Header = () => {
                 2
               </div>
             </Link>
-            {!user ? <SignInButton /> : <UserButton />}
+            {isSignedIn ? (
+              <UserButton afterSignOutUrl={`/`} />
+            ) : (
+              <SignInButton />
+            )}
           </div>
         </div>
       </div>
