@@ -5,6 +5,8 @@ export interface LaptopProduct {
   description: string;
   rating: number;
   totalReviews: number;
+  category: string;
+  brand: string;
   model: string;
   sku: string;
   price: number;

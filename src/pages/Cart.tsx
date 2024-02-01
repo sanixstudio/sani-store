@@ -6,6 +6,9 @@ import { TbMoodEmpty } from "react-icons/tb";
 import { useHandleCart } from "../hooks/useCart";
 import { Button } from "@radix-ui/themes";
 import useScreenSize from "../hooks/useScreenSize";
+import { BsArrowRight } from "react-icons/bs";
+import { handleClearCart } from "../utils/cart";
+import toast from "react-hot-toast";
 
 const Cart = () => {
   const { cart: cartItems, removeFromCart } = useCartStore();
@@ -28,7 +31,10 @@ const Cart = () => {
                 Shopping Cart
               </h1>
               {cartItems.length > 0 ? (
-                <form className="mt-12 lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-12 xl:gap-x-16">
+                <form
+                  className="mt-12 lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-12 xl:gap-x-16"
+                  onSubmit={(e) => e.preventDefault()}
+                >
                   <section
                     aria-labelledby="cart-heading"
                     className="rounded-lg bg-white lg:col-span-8"
@@ -185,10 +191,16 @@ const Cart = () => {
                           </dd>
                         </div>
                       </dl>
-                      <div className="px-2 py-4">
+                      <div className="px-2 py-4 flex justify-center">
                         {/* TODO: Add checkout button and logic with stripe */}
-                        <Button size={screenSize === "sm" ? "2" : "3"}>
-                          Continue to Checkout
+                        <Button
+                          onClick={() => {
+                            handleClearCart();
+                          }}
+                          size={screenSize === "sm" ? "2" : "3"}
+                          className="cursor-pointer"
+                        >
+                          Place Order <BsArrowRight />
                         </Button>
                       </div>
                     </div>

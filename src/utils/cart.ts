@@ -14,3 +14,9 @@ export const handleAddToCart = (item: LaptopProduct) => {
   );
   toast.success("Item added to cart");
 };
+
+// Delete cart items from local storage
+export const handleClearCart = () => {
+  localStorage.removeItem("cart");
+  window.location.reload();
+};
