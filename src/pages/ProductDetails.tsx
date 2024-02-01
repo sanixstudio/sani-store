@@ -7,6 +7,7 @@ import { getImage } from "../utils/getImages";
 import { Button, Table } from "@radix-ui/themes";
 import { BiCart } from "react-icons/bi";
 import useGetDataFromSanity from "../hooks/getDataFromSanity";
+import { useHandleCart } from "../hooks/useCart"; // Update the import to useHandleCart
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -52,8 +53,8 @@ export default function ProductDetails() {
   const [displayImage, setDisplayImage] = useState<string>("");
   const pathName = useLocation().pathname;
   const productId = pathName.split("/")[2];
-
   const { products, isLoading, error } = useGetDataFromSanity();
+  const { addToCartWithToast } = useHandleCart();
 
   const product = products?.find(
     (product: LaptopProduct) => product?._id === productId
@@ -150,12 +151,15 @@ export default function ProductDetails() {
                   </p>
                 </div>
               </div>
-              <form className="mt-10">
-                <Button size={"3"} variant="solid">
-                  <BiCart size={24} />
-                  Add to Cart
-                </Button>
-              </form>
+              <Button
+                className="cursor-pointer mt-10"
+                onClick={() => addToCartWithToast(product)}
+                size={"3"}
+                variant="solid"
+              >
+                <BiCart size={24} />
+                Add to Cart
+              </Button>
             </div>
             <div className="py-10 lg:col-span-2 lg:col-start-1 lg:border-r lg:border-gray-200 lg:pb-16 lg:pr-8 lg:pt-6">
               {/* Description and details */}

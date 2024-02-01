@@ -37,3 +37,15 @@ export interface LaptopProduct {
     graphics: string;
   };
 }
+
+export interface CartItem {
+  _id: string;
+  mainImage: {
+    asset: {
+      _ref: string;
+    };
+  };
+  title: string;
+  price: number;
+  quantity: number;
+}

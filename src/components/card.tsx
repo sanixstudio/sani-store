@@ -1,8 +1,8 @@
 import { RiHeartLine, RiSearchLine } from "react-icons/ri";
 import { getImage } from "../utils/getImages";
-import { LaptopProduct } from "../types";
+import { CartItem, LaptopProduct } from "../types";
 import { Link } from "react-router-dom";
-import { useAddToCart } from "../hooks/useCart"; // Import the custom hook
+import { useHandleCart } from "../hooks/useCart";
 
 const GrayStar = () => {
   return <span className="text-gray-300 text-xl">☆</span>;
@@ -28,7 +28,15 @@ const calculateGoldenStars = (ratings: number) => {
 };
 
 const ProductCard = ({ laptop }: { laptop: LaptopProduct }) => {
-  const addToCart = useAddToCart(); // Use the custom hook
+  const addToCart = useHandleCart(); // Use the custom hook
+
+  const cartItem: CartItem = {
+    _id: laptop._id,
+    mainImage: laptop.mainImage,
+    title: laptop.title,
+    quantity: 1,
+    price: laptop.price,
+  };
 
   return (
     <div className="w-full border mx-0 my-4 flex flex-col justify-between items-center gap-4 relative group rounded-md">
@@ -67,7 +75,7 @@ const ProductCard = ({ laptop }: { laptop: LaptopProduct }) => {
       <div className="w-full">
         <button
           className="bg-[#E93D83] p-2 w-full text-white rounded-b-md"
-          onClick={() => addToCart(laptop)} // Use the addToCart function
+          onClick={() => addToCart.addToCartWithToast(cartItem as CartItem)}
         >
           Add to cart
         </button>

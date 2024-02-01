@@ -51,12 +51,22 @@ const Header = () => {
           ) : null}
           <div className="w-fit">
             <a href="/" className="flex gap-2">
-              <span className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#E93D83]">
-                SANI{" "}
-              </span>
-              <span className="text-2xl md:text-3xl lg:text-4xl font-bold text-[#1F2937]">
-                STORE
-              </span>
+              <div>
+                <span className="inline-block text-xl md:text-2xl lg:text-3xl px-2 bg-[#E93D83] text-white rounded-md">
+                  S
+                </span>
+                <span className="hidden lg:inline-block text-xl md:text-2xl lg:text-3xl font-bold text-[#E93D83]">
+                  ANI
+                </span>
+              </div>
+              <div>
+                <span className="inline-block px-2 text-xl md:text-2xl lg:text-3xl bg-slate-700 text-white rounded-md">
+                  S
+                </span>
+                <span className="hidden lg:inline-block text-xl md:text-2xl lg:text-3xl font-bold text-slate-700">
+                  TORE
+                </span>
+              </div>
             </a>
           </div>
           <div className="hidden md:flex w-full max-w-[320px] sm:max-w-[400px] md:max-w-[500px] mx-4 lg:max-w-[600px] border border-[#E93D83] rounded-l-md rounded-r-md justify-between items-center">
@@ -75,13 +85,13 @@ const Header = () => {
             </Button>
           </div>
           <div className="flex justify-between gap-6">
-            <Link className="relative text-white" to="wishlist">
+            <Link className="relative text-white" to="/wishlist">
               <RiHeartLine size={28} color="gray" />
               <div className="absolute w-[20px] h-[20px] -top-[.5em] -right-[8px] flex items-center justify-center rounded-full bg-[#E93D83]">
                 3
               </div>
             </Link>
-            <Link className="relative text-white" to="cart">
+            <Link className="relative text-white" to="/cart">
               <RiShoppingCartLine size={28} color="gray" />
               <div className="absolute w-[20px] h-[20px] -top-[.5em] -right-[8px] flex items-center justify-center rounded-full bg-[#E93D83]">
                 {cart.length || 0}

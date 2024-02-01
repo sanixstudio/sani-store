@@ -15,6 +15,8 @@ import AllProducts from "./pages/AllProducts.tsx";
 import About from "./pages/About.tsx";
 import Contact from "./pages/Contact.tsx";
 import { ClerkProvider } from "@clerk/clerk-react";
+import Cart from "./pages/Cart.tsx";
+import WishList from "./pages/WishList.tsx";
 
 const router = createBrowserRouter([
   {
@@ -28,6 +30,14 @@ const router = createBrowserRouter([
   {
     path: "/contact",
     element: <Contact />,
+  },
+  {
+    path: "/cart",
+    element: <Cart />,
+  },
+  {
+    path: "/wishlist",
+    element: <WishList />,
   },
   {
     path: "/product-details/:id",
