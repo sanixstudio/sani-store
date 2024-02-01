@@ -4,8 +4,11 @@ import { SiDell, SiApple, SiHp } from "react-icons/si";
 import apple from "../assets/images/apple_bg.jpg";
 import dell from "../assets/images/dell_bg.png";
 import hp from "../assets/images/hp_bg.png";
+import { useNavigate } from "react-router-dom";
 
 const ShopByCategories = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="w-full">
       <div className="max-w-[1440px] mx-auto px-4 py-16 ">
@@ -20,7 +23,11 @@ const ShopByCategories = () => {
             }}
           >
             <div className="absolute top-0 left-0 w-full h-full rounded-lg bg-black/40 text-[#fff] flex justify-center items-center">
-              <Button size={"4"} className="font-bold rounded-full">
+              <Button
+                onClick={() => navigate("/apple")}
+                size={"4"}
+                className="font-bold rounded-full cursor-pointer"
+              >
                 <SiApple size={32} />
                 APPLE
               </Button>
@@ -35,7 +42,11 @@ const ShopByCategories = () => {
             }}
           >
             <div className="absolute top-0 left-0 w-full h-full rounded-lg bg-black/40 text-[#fff] flex justify-center items-center">
-              <Button size={"4"} className="font-bold rounded-full">
+              <Button
+                onClick={() => navigate("/dell")}
+                size={"4"}
+                className="font-bold rounded-full cursor-pointer"
+              >
                 <SiDell size={32} />
                 DELL
               </Button>
@@ -50,7 +61,11 @@ const ShopByCategories = () => {
             }}
           >
             <div className="absolute top-0 left-0 w-full h-full rounded-lg bg-black/40 text-[#fff] flex justify-center items-center">
-              <Button size={"4"} className="font-bold rounded-full">
+              <Button
+                onClick={() => navigate("/hp")}
+                size={"4"}
+                className="font-bold rounded-full cursor-pointer"
+              >
                 <SiHp size={32} />
                 HP
               </Button>

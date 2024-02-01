@@ -2,6 +2,7 @@ import { RiHeartLine, RiSearchLine } from "react-icons/ri";
 import { getImage } from "../utils/getImages";
 import { LaptopProduct } from "../types";
 import { Link } from "react-router-dom";
+import { useAddToCart } from "../hooks/useCart"; // Import the custom hook
 
 const GrayStar = () => {
   return <span className="text-gray-300 text-xl">☆</span>;
@@ -11,21 +12,23 @@ const GoldenStar = () => {
   return <span className="text-yellow-500 text-xl">★</span>;
 };
 
+const calculateGoldenStars = (ratings: number) => {
+  const ratingsValue = Math.floor(ratings);
+  const stars = [];
+
+  for (let i = 0; i < 5; i++) {
+    stars.push(<GrayStar key={i} />);
+  }
+
+  for (let i = 0; i < ratingsValue; i++) {
+    stars[i] = <GoldenStar key={i} />;
+  }
+
+  return stars;
+};
+
 const ProductCard = ({ laptop }: { laptop: LaptopProduct }) => {
-  const calculateGoldenStars = (ratings: number) => {
-    const ratingsValue = Math.floor(ratings);
-    const stars = [];
-
-    for (let i = 0; i < 5; i++) {
-      stars.push(<GrayStar key={i} />);
-    }
-
-    for (let i = 0; i < ratingsValue; i++) {
-      stars[i] = <GoldenStar key={i} />;
-    }
-
-    return stars;
-  };
+  const addToCart = useAddToCart(); // Use the custom hook
 
   return (
     <div className="w-full border mx-0 my-4 flex flex-col justify-between items-center gap-4 relative group rounded-md">
@@ -62,7 +65,10 @@ const ProductCard = ({ laptop }: { laptop: LaptopProduct }) => {
         </div>
       </div>
       <div className="w-full">
-        <button className="bg-[#E93D83] p-2 w-full text-white rounded-b-md">
+        <button
+          className="bg-[#E93D83] p-2 w-full text-white rounded-b-md"
+          onClick={() => addToCart(laptop)} // Use the addToCart function
+        >
           Add to cart
         </button>
       </div>

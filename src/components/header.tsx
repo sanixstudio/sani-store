@@ -11,11 +11,13 @@ import { Button, DropdownMenu } from "@radix-ui/themes";
 import { Link } from "react-router-dom";
 import { SiApple, SiDell, SiHp } from "react-icons/si";
 import { SignInButton, UserButton, useAuth } from "@clerk/clerk-react";
+import useCartStore from "../store/appStore";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [navMenuIsOpen, setNavMenuIsOpen] = useState(false);
   const { isSignedIn } = useAuth();
+  const { cart } = useCartStore();
 
   const toggleSearchMenu = () => {
     setIsOpen(!isOpen);
@@ -82,7 +84,7 @@ const Header = () => {
             <Link className="relative text-white" to="cart">
               <RiShoppingCartLine size={28} color="gray" />
               <div className="absolute w-[20px] h-[20px] -top-[.5em] -right-[8px] flex items-center justify-center rounded-full bg-[#E93D83]">
-                2
+                {cart.length || 0}
               </div>
             </Link>
             {isSignedIn ? (
