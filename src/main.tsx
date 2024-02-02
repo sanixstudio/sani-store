@@ -17,6 +17,7 @@ import Contact from "./pages/Contact.tsx";
 import { ClerkProvider } from "@clerk/clerk-react";
 import Cart from "./pages/Cart.tsx";
 import WishList from "./pages/WishList.tsx";
+import Search from "./pages/Search.tsx";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
   {
     path: "/contact",
     element: <Contact />,
+  },
+  {
+    path: "/search/:query",
+    element: <Search />,
   },
   {
     path: "/cart",

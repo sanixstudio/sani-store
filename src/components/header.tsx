@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { ChangeEvent, FormEvent, useState } from "react";
 import {
   RiShoppingCartLine,
   RiHeartLine,
@@ -8,16 +8,29 @@ import {
 } from "react-icons/ri";
 import { Button, DropdownMenu } from "@radix-ui/themes";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { SiApple, SiDell, SiHp } from "react-icons/si";
 import { SignInButton, UserButton, useAuth } from "@clerk/clerk-react";
 import useCartStore from "../store/appStore";
 
 const Header = () => {
+  const navigate = useNavigate();
+  let [query, setQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [navMenuIsOpen, setNavMenuIsOpen] = useState(false);
   const { isSignedIn } = useAuth();
   const { cart } = useCartStore();
+
+  const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
+    if (e.target) {
+      setQuery(e.target.value);
+    }
+  };
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    navigate(`/search/${query}`);
+  };
 
   const toggleSearchMenu = () => {
     setIsOpen(!isOpen);
@@ -37,16 +50,20 @@ const Header = () => {
         <div className="w-full max-w-[1440px] mx-auto flex justify-between items-center px-4 py-3 relative">
           {isOpen ? (
             <div className="absolute top-14 z-10 flex justify-center items-center left-0 md:hidden w-full bg-slate-200">
-              <div className="mx-4 flex w-full border-[#E93D83] rounded-l-md rounded-r-md justify-between items-center">
-                <RiSearchLine color="gray" size={24} className="mx-4" />
-                <input
-                  type="text"
-                  className="flex-1 p-2 focus:outline-none focus:bg-slate-100 mr-2"
-                />
-                <button className="px-6 py-3 bg-[#E93D83] text-white rounded-r-md">
-                  Search
-                </button>
-              </div>
+              <form onSubmit={handleSubmit}>
+                <div className="mx-4 flex w-full border-[#E93D83] rounded-l-md rounded-r-md justify-between items-center">
+                  <RiSearchLine color="gray" size={24} className="mx-4" />
+                  <input
+                    type="text"
+                    className="flex-1 p-2 focus:outline-none focus:bg-slate-100 mr-2"
+                    value={query}
+                    onChange={handleInputChange}
+                  />
+                  <button className="px-6 py-3 bg-[#E93D83] text-white rounded-r-md">
+                    Search
+                  </button>
+                </div>
+              </form>
             </div>
           ) : null}
           <div className="w-fit">
@@ -69,16 +86,20 @@ const Header = () => {
               </div>
             </a>
           </div>
-          <div className="hidden md:flex w-full max-w-[320px] sm:max-w-[400px] md:max-w-[500px] mx-4 lg:max-w-[600px] border border-[#E93D83] rounded-l-md rounded-r-md justify-between items-center">
-            <RiSearchLine size={24} className="mx-4" />
-            <input
-              type="text"
-              className="flex-1 p-2 focus:outline-none focus:bg-slate-100 mr-2"
-            />
-            <button className="px-6 py-3 bg-[#E93D83] text-white rounded-r-md">
-              Search
-            </button>
-          </div>
+          <form onSubmit={handleSubmit}>
+            <div className="hidden md:flex w-full max-w-[320px] sm:max-w-[400px] md:max-w-[500px] mx-4 lg:max-w-[600px] border border-[#E93D83] rounded-l-md rounded-r-md justify-between items-center">
+              <RiSearchLine size={24} className="mx-4" />
+              <input
+                type="text"
+                className="flex-1 p-2 focus:outline-none focus:bg-slate-100 mr-2"
+                value={query}
+                onChange={handleInputChange}
+              />
+              <button className="px-6 py-3 bg-[#E93D83] text-white rounded-r-md">
+                Search
+              </button>
+            </div>
+          </form>
           <div className="md:hidden mx-4">
             <Button variant="ghost" onClick={toggleSearchMenu}>
               {isOpen ? <RiCloseLine size={24} /> : <RiSearchLine size={24} />}
