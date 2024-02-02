@@ -2,6 +2,7 @@ export interface LaptopProduct {
   _id: string;
   _type: "laptop";
   title: string;
+  longTitle: string;
   description: string;
   rating: number;
   totalReviews: number;

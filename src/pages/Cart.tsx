@@ -126,7 +126,7 @@ const Cart = () => {
                               {product.quantity} qty
                             </dd>
                             <dd className="text-sm font-medium text-gray-500">
-                              $ {(product.price * product.quantity).toFixed(2)}
+                              $ {product.price}
                             </dd>
                           </div>
                         </div>
