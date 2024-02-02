@@ -8,7 +8,6 @@ import { Button } from "@radix-ui/themes";
 import useScreenSize from "../hooks/useScreenSize";
 import { BsArrowRight } from "react-icons/bs";
 import { handleClearCart } from "../utils/cart";
-import toast from "react-hot-toast";
 
 const Cart = () => {
   const { cart: cartItems, removeFromCart } = useCartStore();
