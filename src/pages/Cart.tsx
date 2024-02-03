@@ -22,7 +22,7 @@ const Cart = () => {
 
   return (
     <Layout>
-      <div className="max-w-[1440px] mx-auto py-10">
+      <div className="max-w-[1440px] mx-auto py-10 min-h-[calc(100vh-500px)]">
         <div className="mx-4">
           <div className="mx-auto max-w-7xl px-2 lg:px-0">
             <div className="mx-auto max-w-2xl py-8 lg:max-w-7xl">

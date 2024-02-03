@@ -18,6 +18,7 @@ import { ClerkProvider } from "@clerk/clerk-react";
 import Cart from "./pages/Cart.tsx";
 import WishList from "./pages/WishList.tsx";
 import Search from "./pages/Search.tsx";
+import { Toaster } from "react-hot-toast";
 
 const router = createBrowserRouter([
   {
@@ -83,6 +84,14 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <ClerkProvider publishableKey={PUBLISHABLE_KEY}>
       <Theme accentColor="crimson">
         <QueryClientProvider client={queryClient}>
+          <Toaster
+            toastOptions={{
+              style: {
+                background: "#363636",
+                color: "#fff",
+              },
+            }}
+          />
           <RouterProvider router={router} />
         </QueryClientProvider>
       </Theme>

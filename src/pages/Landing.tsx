@@ -10,9 +10,9 @@ const Landing = () => {
       <Hero />
       <LandingContent />
       <ShopByCategories />
-      <ProductsGallery title={"TOP NEW ARRIVALS"} />
+      <ProductsGallery title={"TOP NEW ARRIVALS"} limit={8} />
       <Banner />
-      <ProductsGallery title={"RECOMMENDED FOR YOU"} />
+      <ProductsGallery title={"RECOMMENDED FOR YOU"} limit={6} />
     </div>
   );
 };

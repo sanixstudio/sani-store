@@ -1,19 +1,22 @@
 # Main Todo
 
-- Add Authentication
+- [x] Add Authentication
+- [ ] Add Error and Loading handling on UI
+- [ ] Add logic to save products to wishlist
+- [x] Fix Toast display issues
 
 ## Pages
 
 - [x] Landing
-- [ ] Shop
-- [ ] About Us
-- [ ] Contact Us
-- [ ] Search
-- [ ] Cart
+- [x] Shop
+- [x] About Us
+- [x] Contact Us
+- [x] Search
+- [x] Cart
 - [ ] Favorite
 - [ ] Admin
-- [ ] Login
-- [ ] Register
+- [x] Login
+- [x] Register
 
 ## Features
 
@@ -22,6 +25,4 @@
 
 # BackLogs
 
-- Add Logic to Add Product to favorite list
-- Add Logic to Add Products to cart
 - Add Payment gateway

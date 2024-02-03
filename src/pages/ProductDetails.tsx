@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { TiStarFullOutline } from "react-icons/ti";
 import { useLocation } from "react-router-dom";
-import { LaptopProduct } from "../types";
+import { CartItem, LaptopProduct } from "../types";
 import Layout from "../layout/Layout";
 import { getImage } from "../utils/getImages";
 import { Button, Table } from "@radix-ui/themes";
@@ -54,7 +54,7 @@ export default function ProductDetails() {
   const pathName = useLocation().pathname;
   const productId = pathName.split("/")[2];
   const { products, isLoading, error } = useGetDataFromSanity();
-  const { addToCartWithToast } = useHandleCart();
+  const addToCart = useHandleCart(); // Use the custom hook
 
   const product = products?.find(
     (product: LaptopProduct) => product?._id === productId
@@ -70,6 +70,14 @@ export default function ProductDetails() {
   if (!product) {
     return <div>Product not found</div>;
   }
+
+  const cartItem: CartItem = {
+    _id: product._id,
+    mainImage: product.mainImage,
+    title: product.title,
+    quantity: 1,
+    price: product.price,
+  };
 
   if (isLoading) {
     return <div>Loading...</div>;
@@ -153,7 +161,9 @@ export default function ProductDetails() {
               </div>
               <Button
                 className="cursor-pointer mt-10"
-                onClick={() => addToCartWithToast(product)}
+                onClick={() =>
+                  addToCart.addToCartWithToast(cartItem as CartItem)
+                }
                 size={"3"}
                 variant="solid"
               >
