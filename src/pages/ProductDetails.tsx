@@ -8,6 +8,8 @@ import { Button, Table } from "@radix-ui/themes";
 import { BiCart } from "react-icons/bi";
 import useGetDataFromSanity from "../hooks/getDataFromSanity";
 import { useHandleCart } from "../hooks/useCart"; // Update the import to useHandleCart
+import Loader from "../components/loader";
+import Error from "../components/error";
 
 function classNames(...classes: string[]) {
   return classes.filter(Boolean).join(" ");
@@ -53,7 +55,7 @@ export default function ProductDetails() {
   const [displayImage, setDisplayImage] = useState<string>("");
   const pathName = useLocation().pathname;
   const productId = pathName.split("/")[2];
-  const { products, isLoading, error } = useGetDataFromSanity();
+  let { products, isLoading, error } = useGetDataFromSanity();
   const addToCart = useHandleCart(); // Use the custom hook
 
   const product = products?.find(
@@ -80,11 +82,11 @@ export default function ProductDetails() {
   };
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <Error />;
   }
 
   return (

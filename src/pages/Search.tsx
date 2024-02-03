@@ -3,6 +3,8 @@ import ProductCard from "../components/card";
 import useGetDataFromSanity from "../hooks/getDataFromSanity";
 import Layout from "../layout/Layout";
 import { LaptopProduct } from "../types";
+import Loader from "../components/loader";
+import Error from "../components/error";
 
 const Search = () => {
   const { products, isLoading, error } = useGetDataFromSanity();
@@ -10,11 +12,11 @@ const Search = () => {
   const queryString = decodeURI(pathName.split("/").pop() as string);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <Error />;
   }
 
   console.log(queryString);

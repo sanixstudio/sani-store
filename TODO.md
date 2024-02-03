@@ -26,3 +26,4 @@
 # BackLogs
 
 - Add Payment gateway
+- Add Pagination for all products

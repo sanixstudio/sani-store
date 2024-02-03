@@ -1,4 +1,6 @@
 import ProductCard from "../components/card";
+import Error from "../components/error";
+import Loader from "../components/loader";
 import useGetDataFromSanity from "../hooks/getDataFromSanity";
 import Layout from "../layout/Layout";
 import { LaptopProduct } from "../types";
@@ -7,11 +9,11 @@ const AllProducts = () => {
   const { products, isLoading, error } = useGetDataFromSanity();
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <Error />;
   }
 
   return (

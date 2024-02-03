@@ -1,6 +1,8 @@
 import useGetDataFromSanity from "../hooks/getDataFromSanity";
 import { LaptopProduct } from "../types";
 import Card from "./card";
+import Error from "./error";
+import Loader from "./loader";
 
 export type ProductsGalleryProps = {
   title: string;
@@ -12,11 +14,11 @@ const ProductsGallery = ({ title, limit }: ProductsGalleryProps) => {
   const productsToShow = products?.slice(0, limit);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return <Loader />;
   }
 
   if (error) {
-    return <div>Error: {error.message}</div>;
+    return <Error />;
   }
 
   return (
