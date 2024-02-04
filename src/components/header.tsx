@@ -12,14 +12,21 @@ import { Link, useNavigate } from "react-router-dom";
 import { SiApple, SiDell, SiHp } from "react-icons/si";
 import { SignInButton, UserButton, useAuth } from "@clerk/clerk-react";
 import useCartStore from "../store/appStore";
+import useGetDataFromSanity from "../hooks/getDataFromSanity";
+import { LaptopProduct } from "../types";
 
 const Header = () => {
   const navigate = useNavigate();
   let [query, setQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [navMenuIsOpen, setNavMenuIsOpen] = useState(false);
+  const { products } = useGetDataFromSanity();
   const { isSignedIn } = useAuth();
   const { cart } = useCartStore();
+
+  const favoriteProducts = products?.filter(
+    (product: LaptopProduct) => product.isFavorite
+  );
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target) {
@@ -109,7 +116,7 @@ const Header = () => {
             <Link className="relative text-white" to="/wishlist">
               <RiHeartLine size={28} color="gray" />
               <div className="absolute w-[20px] h-[20px] -top-[.5em] -right-[8px] flex items-center justify-center rounded-full bg-[#E93D83]">
-                3
+                {favoriteProducts?.length || 0}
               </div>
             </Link>
             <Link className="relative text-white" to="/cart">

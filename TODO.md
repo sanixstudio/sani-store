@@ -1,7 +1,7 @@
 # Main Todo
 
 - [x] Add Authentication
-- [ ] Add Error and Loading handling on UI
+- [x] Add Error and Loading handling on UI
 - [ ] Add logic to save products to wishlist
 - [x] Fix Toast display issues
 

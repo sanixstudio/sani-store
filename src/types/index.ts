@@ -1,6 +1,7 @@
 export interface LaptopProduct {
   _id: string;
   _type: "laptop";
+  isFavorite: boolean;
   title: string;
   longTitle: string;
   description: string;

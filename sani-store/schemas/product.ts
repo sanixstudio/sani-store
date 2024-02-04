@@ -6,6 +6,11 @@ export default {
   type: 'document',
   fields: [
     {
+      name: 'isFavorite',
+      title: 'Is Favorite',
+      type: 'boolean',
+    },
+    {
       name: 'title',
       title: 'Title',
       type: 'string',

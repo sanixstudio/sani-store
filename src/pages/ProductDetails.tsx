@@ -91,7 +91,7 @@ export default function ProductDetails() {
 
   return (
     <Layout>
-      <div className="bg-white">
+      <div className="bg-white min-h-[calc(100vh-500px)]">
         <div className="pt-6 max-w-2xl lg:max-w-7xl mx-auto">
           <div className="mx-auto max-w-2xl px-4 pb-10 pt-10 sm:px-6 lg:grid lg:max-w-7xl">
             <h2 className="text-2xl md:text-4xl font-bold">{product.title}</h2>
