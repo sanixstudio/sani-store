@@ -62,7 +62,7 @@ const ProductCard = ({ laptop }: { laptop: LaptopProduct }) => {
             <BsHeartFill color="#334155" size={18} />
           </div>
         )}
-        <div className="absolute flex gap-4 justify-center items-center w-full h-full bg-white/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity">
+        <div className="absolute -top-[14px] py-[13em] flex gap-4 justify-center items-center w-full h-full bg-white/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity">
           <div
             onClick={handleToggleFavorite}
             className="rounded-full bg-[#e93d83] text-white p-2 cursor-pointer"
