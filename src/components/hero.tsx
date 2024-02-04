@@ -13,14 +13,13 @@ export default function Hero() {
             <div className="hidden sm:mb-8 sm:flex sm:justify-center"></div>
             <div className="text-center">
               <h1 className="text-4xl font-bold tracking-tight sm:text-6xl">
-                Explore products,
+                Explore Laptops,
                 <br />
                 with best shopping experience
               </h1>
               <p className="mt-6 text-lg leading-8 ">
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui
-                lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat
-                fugiat aliqua.
+                Find best deals all around the year. Shop and save with new and
+                recommended laptops. Let's start exploring...
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <Link

@@ -1,9 +1,10 @@
 import { Button } from "@radix-ui/themes";
-import { SiDell, SiApple, SiHp } from "react-icons/si";
+import { SiDell, SiApple, SiHp, SiAsus } from "react-icons/si";
 
 import apple from "../assets/images/apple_bg.jpg";
 import dell from "../assets/images/dell_bg.png";
 import hp from "../assets/images/hp_bg.png";
+import asus from "../assets/images/asus.png";
 import { useNavigate } from "react-router-dom";
 
 const ShopByCategories = () => {
@@ -13,7 +14,7 @@ const ShopByCategories = () => {
     <div className="w-full">
       <div className="max-w-[1440px] mx-auto px-4 py-16 ">
         <h2 className="text-2xl font-bold -mt-8 mb-6">SHOP BY CATEGORY</h2>
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
           <div
             className="min-h-[250px] relative bg-gray-100 rounded-lg shadow-lg"
             style={{
@@ -68,6 +69,25 @@ const ShopByCategories = () => {
               >
                 <SiHp size={32} />
                 HP
+              </Button>
+            </div>
+          </div>
+          <div
+            className="min-h-[250px] relative bg-gray-100 rounded-lg shadow-lg"
+            style={{
+              backgroundImage: `url(${asus})`,
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+            }}
+          >
+            <div className="absolute top-0 left-0 w-full h-full rounded-lg bg-black/40 text-[#fff] flex justify-center items-center">
+              <Button
+                onClick={() => navigate("/asus")}
+                size={"4"}
+                className="font-bold rounded-full cursor-pointer"
+              >
+                <SiAsus size={32} />
+                ASUS
               </Button>
             </div>
           </div>

@@ -19,6 +19,7 @@ import Cart from "./pages/Cart.tsx";
 import WishList from "./pages/WishList.tsx";
 import Search from "./pages/Search.tsx";
 import { Toaster } from "react-hot-toast";
+import Asus from "./pages/Asus.tsx";
 
 const router = createBrowserRouter([
   {
@@ -64,6 +65,10 @@ const router = createBrowserRouter([
   {
     path: "/hp",
     element: <Hp />,
+  },
+  {
+    path: "/asus",
+    element: <Asus />,
   },
   {
     path: "*",

@@ -9,7 +9,7 @@ import {
 import { Button, DropdownMenu } from "@radix-ui/themes";
 
 import { Link, useNavigate } from "react-router-dom";
-import { SiApple, SiDell, SiHp } from "react-icons/si";
+import { SiApple, SiAsus, SiDell, SiHp } from "react-icons/si";
 import { SignInButton, UserButton, useAuth } from "@clerk/clerk-react";
 import { useCartStore } from "../store/appStore";
 import useGetWishlist from "../hooks/getWishList";
@@ -150,27 +150,36 @@ const Header = () => {
             </DropdownMenu.Trigger>
             <DropdownMenu.Content className="w-full">
               <DropdownMenu.Item className="hover:bg-[#E93D83] min-w-[150px]">
-                <Link to="/all-products" className="w-full">
+                <Link to="/all-products" className="w-full p-1">
                   All
                 </Link>
               </DropdownMenu.Item>
               <DropdownMenu.Separator />
               <DropdownMenu.Item className="hover:bg-[#E93D83] min-w-[150px]">
-                <Link to="/apple" className="w-full flex items-center gap-2">
+                <Link
+                  to="/apple"
+                  className="w-full flex p-1 items-center gap-2"
+                >
                   <SiApple />
                   APPLE
                 </Link>
               </DropdownMenu.Item>
               <DropdownMenu.Item className="hover:bg-[#E93D83] min-w-[150px]">
-                <Link to="/dell" className="w-full flex items-center gap-2">
+                <Link to="/dell" className="w-full flex p-1 items-center gap-2">
                   <SiDell />
                   DELL
                 </Link>
               </DropdownMenu.Item>
               <DropdownMenu.Item className="hover:bg-[#E93D83] min-w-[150px]">
-                <Link to="/hp" className="w-full flex items-center gap-2">
+                <Link to="/hp" className="w-full flex p-1 items-center gap-2">
                   <SiHp />
                   HP
+                </Link>
+              </DropdownMenu.Item>
+              <DropdownMenu.Item className="hover:bg-[#E93D83] min-w-[150px]">
+                <Link to="/asus" className="w-full flex p-1 items-center gap-2">
+                  <SiAsus size={32} />
+                  ASUS
                 </Link>
               </DropdownMenu.Item>
             </DropdownMenu.Content>
