@@ -3,7 +3,10 @@ import { getImage } from "../utils/getImages";
 import { CartItem, LaptopProduct } from "../types";
 import { Link } from "react-router-dom";
 import { useHandleCart } from "../hooks/useCart";
-import { toggleFavorite } from "../utils/toggleFavorite";
+import useToggleFavorite from "../hooks/useToggleFavorite";
+import useIsFavorite from "../hooks/useIsFavorite";
+import { BsHeartFill } from "react-icons/bs";
+import { useEffect, useState } from "react";
 
 const GrayStar = () => {
   return <span className="text-gray-300 text-xl">☆</span>;
@@ -30,6 +33,18 @@ const calculateGoldenStars = (ratings: number) => {
 
 const ProductCard = ({ laptop }: { laptop: LaptopProduct }) => {
   const addToCart = useHandleCart();
+  const [currentFav, setCurrentFav] = useState<boolean>(false);
+  const toggleFavorite = useToggleFavorite(laptop);
+  const isFavorite = useIsFavorite(laptop._id);
+
+  const handleToggleFavorite = async () => {
+    const isFav = await toggleFavorite();
+    setCurrentFav(isFav);
+  };
+
+  useEffect(() => {
+    setCurrentFav(isFavorite);
+  }, [isFavorite]);
 
   const cartItem: CartItem = {
     _id: laptop._id,
@@ -41,10 +56,15 @@ const ProductCard = ({ laptop }: { laptop: LaptopProduct }) => {
 
   return (
     <div className="w-full border mx-0 my-4 flex flex-col justify-between items-center gap-4 relative group rounded-md">
-      <div className="w-[320px] h-full p-4 flex flex-col justify-between items-center gap-4 text-sm relative">
+      <div className="w-[320px] h-full m-4 flex flex-col justify-between items-center gap-4 text-sm relative">
+        {currentFav && (
+          <div className="absolute right-1 -top-2 rounded-t-[10px] rounded-r-[10px]">
+            <BsHeartFill color="#334155" size={18} />
+          </div>
+        )}
         <div className="absolute flex gap-4 justify-center items-center w-full h-full bg-white/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity">
           <div
-            onClick={() => toggleFavorite(laptop._id, true)}
+            onClick={handleToggleFavorite}
             className="rounded-full bg-[#e93d83] text-white p-2 cursor-pointer"
           >
             <RiHeartLine size={32} />

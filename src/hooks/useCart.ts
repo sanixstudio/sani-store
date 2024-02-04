@@ -1,4 +1,4 @@
-import useCartStore from "../store/appStore";
+import { useCartStore } from "../store/appStore";
 import { CartItem } from "../types";
 import toast from "react-hot-toast";
 

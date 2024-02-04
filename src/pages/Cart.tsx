@@ -1,6 +1,6 @@
 import { BiTrash } from "react-icons/bi";
 import Layout from "../layout/Layout";
-import useCartStore from "../store/appStore";
+import { useCartStore } from "../store/appStore";
 import { getImage } from "../utils/getImages";
 import { TbMoodEmpty } from "react-icons/tb";
 import { useHandleCart } from "../hooks/useCart";

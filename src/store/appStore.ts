@@ -1,4 +1,4 @@
-import create from "zustand";
+import { create } from "zustand";
 import { CartItem } from "../types";
 
 interface CartStore {
@@ -9,7 +9,7 @@ interface CartStore {
   decreaseQuantity: (itemId: string) => void;
 }
 
-const useCartStore = create<CartStore>((set) => ({
+export const useCartStore = create<CartStore>((set) => ({
   cart: JSON.parse(localStorage.getItem("cart") as string) || [],
   addToCart: (item) => {
     set((state) => {
@@ -65,5 +65,3 @@ const useCartStore = create<CartStore>((set) => ({
     });
   },
 }));
-
-export default useCartStore;

@@ -11,9 +11,10 @@ import { Button, DropdownMenu } from "@radix-ui/themes";
 import { Link, useNavigate } from "react-router-dom";
 import { SiApple, SiDell, SiHp } from "react-icons/si";
 import { SignInButton, UserButton, useAuth } from "@clerk/clerk-react";
-import useCartStore from "../store/appStore";
+import { useCartStore } from "../store/appStore";
 import useGetDataFromSanity from "../hooks/getDataFromSanity";
 import { LaptopProduct } from "../types";
+import useGetWishlist from "../hooks/getWishList";
 
 const Header = () => {
   const navigate = useNavigate();
@@ -23,6 +24,7 @@ const Header = () => {
   const { products } = useGetDataFromSanity();
   const { isSignedIn } = useAuth();
   const { cart } = useCartStore();
+  const { productscount } = useGetWishlist();
 
   const favoriteProducts = products?.filter(
     (product: LaptopProduct) => product.isFavorite
@@ -116,7 +118,7 @@ const Header = () => {
             <Link className="relative text-white" to="/wishlist">
               <RiHeartLine size={28} color="gray" />
               <div className="absolute w-[20px] h-[20px] -top-[.5em] -right-[8px] flex items-center justify-center rounded-full bg-[#E93D83]">
-                {favoriteProducts?.length || 0}
+                {productscount}
               </div>
             </Link>
             <Link className="relative text-white" to="/cart">
