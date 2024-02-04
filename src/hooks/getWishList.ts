@@ -4,14 +4,6 @@ import { useAuth } from "@clerk/clerk-react";
 import { db } from "../lib/firebase";
 import { LaptopProduct } from "../types";
 
-interface WishlistItem {
-  // Define the properties of a wishlist item here
-  // For example:
-  id: string;
-  name: string;
-  // Add more properties as needed
-}
-
 const useGetWishlist = () => {
   const [products, setProducts] = useState<LaptopProduct[]>([]); // Specify the type of 'products'
   const { userId } = useAuth();

@@ -12,8 +12,6 @@ import { Link, useNavigate } from "react-router-dom";
 import { SiApple, SiDell, SiHp } from "react-icons/si";
 import { SignInButton, UserButton, useAuth } from "@clerk/clerk-react";
 import { useCartStore } from "../store/appStore";
-import useGetDataFromSanity from "../hooks/getDataFromSanity";
-import { LaptopProduct } from "../types";
 import useGetWishlist from "../hooks/getWishList";
 
 const Header = () => {
@@ -21,14 +19,9 @@ const Header = () => {
   let [query, setQuery] = useState("");
   const [isOpen, setIsOpen] = useState(false);
   const [navMenuIsOpen, setNavMenuIsOpen] = useState(false);
-  const { products } = useGetDataFromSanity();
   const { isSignedIn } = useAuth();
   const { cart } = useCartStore();
   const { productscount } = useGetWishlist();
-
-  const favoriteProducts = products?.filter(
-    (product: LaptopProduct) => product.isFavorite
-  );
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target) {
