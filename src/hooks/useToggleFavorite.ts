@@ -19,7 +19,7 @@ const useToggleFavorite = (laptop: LaptopProduct) => {
     try {
       if (!isSignedIn) {
         clerk.openSignIn();
-        return false; // Not signed in, return false
+        // return false; // Not signed in, return false
       }
 
       const myCollection = collection(db, "products");

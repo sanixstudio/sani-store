@@ -1,3 +1,5 @@
+import { SiApple, SiAsus, SiDell, SiHp } from "react-icons/si";
+
 export default function Footer() {
   return (
     <section className="relative overflow-hidden py-10 border-t bg-gray-50">
@@ -36,31 +38,43 @@ export default function Footer() {
                     className=" text-base font-medium text-gray-900 hover:text-gray-700"
                     href="/all-products"
                   >
-                    All Products
+                    All
                   </a>
                 </li>
                 <li className="mb-4">
                   <a
-                    className=" text-base font-medium text-gray-900 hover:text-gray-700"
+                    className="flex gap-2 items-center text-base font-medium text-gray-900 hover:text-gray-700"
                     href="/apple"
                   >
-                    Apple
+                    <SiApple />
+                    <span>Apple</span>
                   </a>
                 </li>
                 <li className="mb-4">
                   <a
-                    className=" text-base font-medium text-gray-900 hover:text-gray-700"
+                    className="flex gap-2 items-center text-base font-medium text-gray-900 hover:text-gray-700"
+                    href="/asus"
+                  >
+                    <SiAsus />
+                    <span>Asus</span>
+                  </a>
+                </li>
+                <li className="mb-4">
+                  <a
+                    className="flex gap-2 items-center text-base font-medium text-gray-900 hover:text-gray-700"
                     href="/dell"
                   >
-                    Dell
+                    <SiDell />
+                    <span>Dell</span>
                   </a>
                 </li>
                 <li>
                   <a
-                    className=" text-base font-medium text-gray-900 hover:text-gray-700"
+                    className="flex gap-2 items-center text-base font-medium text-gray-900 hover:text-gray-700"
                     href="/hp"
                   >
-                    Hp
+                    <SiHp />
+                    <span>Hp</span>
                   </a>
                 </li>
               </ul>

@@ -23,7 +23,7 @@ export default function Hero() {
               </p>
               <div className="mt-10 flex items-center justify-center gap-x-6">
                 <Link
-                  to="#"
+                  to="/all-products"
                   className="rounded-md bg-white px-6 py-3 font-semibold text-[#E93D83] shadow-sm hover:bg-white/80 transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Shop Now
