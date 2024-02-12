@@ -20,25 +20,25 @@ const Pagination = ({
   return (
     <div className="flex items-center justify-center bg-[#E93D83]/10 text-white w-full border py-4 my-20">
       {currentPage > 1 && (
-        <a
-          href="#"
+        <button
           onClick={() => onPageChange(currentPage - 1)}
           className="mx-2 text-sm font-semibold text-gray-900"
         >
           &larr; Previous
-        </a>
+        </button>
       )}
       {pageNumbers.map((page) => (
-        <a
+        <button
           key={page}
-          href="#"
           onClick={() => onPageChange(page)}
           className={`mx-1 flex items-center rounded-md border border-[#E93D83]/50 bg-white px-3 py-1 text-gray-900 hover:scale-105 ${
-            currentPage === page ? "bg-[#ff3c8a] text-white" : ""
+            currentPage === page
+              ? "bg-[#E93D83] text-black font-bold"
+              : "text-[#7a7a7a] bg-transparent hover:bg-[#E93D83] hover:text-white"
           }`}
         >
           {page}
-        </a>
+        </button>
       ))}
       {currentPage < totalPages && (
         <a

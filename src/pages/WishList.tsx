@@ -5,13 +5,13 @@ import { LaptopProduct } from "../types";
 import { BsHeartFill } from "react-icons/bs";
 
 const WishList = () => {
-  const { products: productList, productscount } = useGetWishlist();
+  const { products: productList, productsCount } = useGetWishlist();
 
   return (
     <Layout>
       <div className="w-full max-w-[1440px] mx-auto px-4 py-10">
         <h1 className="text-2xl font-bold mb-10">
-          ({productscount}){" "}
+          ({productsCount}){" "}
           <BsHeartFill size={24} fill="red" className="inline-block mr-2" />
           Favorite Products
         </h1>

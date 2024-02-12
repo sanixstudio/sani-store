@@ -6,8 +6,9 @@ import { TbMoodEmpty } from "react-icons/tb";
 import { useHandleCart } from "../hooks/useCart";
 import { Button } from "@radix-ui/themes";
 import useScreenSize from "../hooks/useScreenSize";
-import { BsArrowRight } from "react-icons/bs";
+import { BsArrowRight, BsCart2 } from "react-icons/bs";
 import { handleClearCart } from "../utils/cart";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const { cart: cartItems, removeFromCart } = useCartStore();
@@ -206,10 +207,13 @@ const Cart = () => {
                   </section>
                 </form>
               ) : (
-                <div className="my-20">
-                  <h3 className="text-center flex gap-4 items-center justify-center text-xl">
+                <div className="my-20 flex flex-col items-center justify-center gap-4">
+                  <h3 className="text-center border-b pb-4 flex gap-4 items-center justify-center text-xl text-gray-500">
                     <TbMoodEmpty size={32} /> Cart is empty
                   </h3>
+                  <Link to={"/all-products"} className="flex items-center gap-2 px-4 py-3 rounded-md bg-[#f2f2f2] text-gray-600 hover:bg-[#e6e6e6] ">
+                    <BsCart2 size={18} />Continue Shopping
+                  </Link>
                 </div>
               )}
             </div>

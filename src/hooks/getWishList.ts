@@ -26,7 +26,7 @@ const useGetWishlist = () => {
     }
   }, [userId]);
 
-  return { products, productscount: products.length || 0 };
+  return { products, productsCount: products.length || 0 };
 };
 
 export default useGetWishlist;

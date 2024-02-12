@@ -21,7 +21,7 @@ const Header = () => {
   const [navMenuIsOpen, setNavMenuIsOpen] = useState(false);
   const { isSignedIn } = useAuth();
   const { cart } = useCartStore();
-  const { productscount } = useGetWishlist();
+  const { productsCount } = useGetWishlist();
 
   const handleInputChange = (e: ChangeEvent<HTMLInputElement>) => {
     if (e.target) {
@@ -111,7 +111,7 @@ const Header = () => {
             <Link className="relative text-white" to="/wishlist">
               <RiHeartLine size={28} color="gray" />
               <div className="absolute w-[20px] h-[20px] -top-[.5em] -right-[8px] flex items-center justify-center rounded-full bg-[#E93D83]">
-                {productscount}
+                {productsCount}
               </div>
             </Link>
             <Link className="relative text-white" to="/cart">
@@ -224,19 +224,19 @@ const Header = () => {
                 </Link>
                 <Link
                   className="hover:border-b hover:border-[#E93D83] w-full text-center border-b border-transparent"
-                  to="/"
+                  to="/all-products"
                 >
                   Shop
                 </Link>
                 <Link
                   className="hover:border-b hover:border-[#E93D83] w-full text-center border-b border-transparent"
-                  to="/"
+                  to="/about"
                 >
                   About Us
                 </Link>
                 <Link
                   className="hover:border-b hover:border-[#E93D83] w-full text-center border-b border-transparent"
-                  to="/"
+                  to="/contact"
                 >
                   Contact Us
                 </Link>
