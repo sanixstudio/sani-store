@@ -32,7 +32,7 @@ The application provides a robust search functionality, allowing users to quickl
 
 Sani-Store utilizes Sanity for easy content management. Users can efficiently populate and manage store data through the Sanity dashboard.
 
-### Tech Stack
+## Tech Stack
 
 - **React/Vite**: Frontend framework for building the user interface.
 - **TypeScript**: For Type-safe programming and better code quality.
@@ -65,12 +65,10 @@ yarn install
 
 **3. Sign-up and Configure Sanity:**
 
-```
 - Sign-up for Sanity
 - Create a new project
 - Create a new dataset
 - Create a new token
-```
 
 **4. Create Firebase Database and Configure Clerk:**
 
@@ -87,7 +85,7 @@ VITE_SANITY_DATASET="sanity dataset"
 VITE_SANITY_SECRET_TOKEN="sanity secret token"
 
 VITE_CLERK_PUBLISHABLE_KEY="clerk key"
-VITE_CLERK_SECRET_KEY="clerk secret key"  
+VITE_CLERK_SECRET_KEY="clerk secret key"
 
 VITE_HOST="your local host"
 
@@ -110,4 +108,4 @@ yarn dev
 
 ### Finally:
 
-Explore the Application
+Open http://localhost:5173 with your browser to see the result.
